@@ -6,6 +6,15 @@ export const useMapStore = defineStore('mapStore', () => ({
   mobileSplitterModel: 35,
   leftPanelInfo: false,
   rightPanelVis: true,
+  leftDrawer: true,
+  envJusticeTract: false,
+  envJusticeTribe: false,
+  selectedCounty: '',
+  selectedCongressionalDistrict: '',
+  selectedOwner: '',
+  selectedHazardClassification: '',
+  selectedCondition: '',
+  mapDashboardOption: 'map',
 
   // FUNCTIONS
   getLayersInfo() {
