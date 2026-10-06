@@ -1,17 +1,38 @@
 <template>
-  <div class="text-center text-h5 q-mb-md">Dams 101</div>
-  <div style="margin: auto; width: fit-content; display: block">
-    <ul>
-      <li><a href="#what">What is a Dam?</a></li>
-      <li><a href="#anatomy">Anatomy of a Dam</a></li>
-      <li><a href="#purpose">Purpose of Dams</a></li>
-      <li><a href="#vocabulary">Vocabulary</a></li>
-      <li><a href="#video">Videos</a></li>
-    </ul>
+  <div id="header-title" class="text-center text-h5 q-mb-md">Dams 101</div>
+  <div id="content">
+    <q-list>
+      <q-item clickable v-ripple href="#what">
+        <q-item-section>
+          <q-item-label>What is a Dam?</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#anatomy">
+        <q-item-section>
+          <q-item-label>Anatomy of a Dam</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#purpose">
+        <q-item-section>
+          <q-item-label>Purpose of Dams</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#vocabulary">
+        <q-item-section>
+          <q-item-label>Vocabulary</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#video">
+        <q-item-section>
+          <q-item-label>Videos</q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
   </div>
   <q-separator inset />
   <div id="what" class="q-my-md">
     <div class="text-bold">What is a Dam?</div>
+    <br />
     <div>
       There are a number of technical and legal definitions of a dam, but
       generally it is any structure that impounds or diverts water. In New
@@ -26,6 +47,7 @@
   <q-separator inset />
   <div id="anatomy" class="q-my-md">
     <div class="text-bold">Anatomy of a Dam</div>
+    <br />
     <div class="q-mb-md">
       There are several different types of dams. Below are three diagrams of
       common dams found in New Jersey. A more detailed description of the
@@ -52,6 +74,7 @@
   <q-separator inset />
   <div id="purpose" class="q-my-md">
     <div class="text-bold">Purpose of Dams</div>
+    <br />
     <div>
       Dams have existed since the dawn of the human race. Creating water storage
       for livestock and irrigation was the first reason to impound water. Over
@@ -96,6 +119,7 @@
   <q-separator inset />
   <div id="vocabulary" class="q-my-md">
     <div class="text-bold">Vocabulary</div>
+    <br />
     <div>
       ABUTMENT: The part of the valley side against which the dam is
       constructed. May also refer to an artificial abutment sometimes
@@ -299,6 +323,21 @@
   </div>
 </template>
 <style scoped>
+#header-title {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#what,
+#anatomy,
+#purpose,
+#vocabulary,
+#video {
+  scroll-margin-top: 80px;
+}
+
 #videos > div {
   max-width: 889px;
   margin: auto;
@@ -332,5 +371,12 @@
   width: 70%;
   height: 300px;
   margin: auto;
+}
+
+#content {
+  position: fixed;
+  display: block;
+  left: 20px;
+  top: 80px;
 }
 </style>

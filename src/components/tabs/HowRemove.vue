@@ -1,5 +1,7 @@
 <template>
-  <div class="text-center text-h5 q-mb-md">How to Remove a Dam</div>
+  <div id="header-title" class="text-center text-h5 q-mb-md">
+    How to Remove a Dam
+  </div>
   <div>
     In the vast majority of cases, dam removals only proceed with the consent of
     the dam owner. The owner, or the owner and partners, must begin the dam
@@ -27,17 +29,40 @@
     liability), need to be made clear, all while respecting the interests of the
     people.
   </div>
-  <div style="margin: auto; width: fit-content; display: block">
-    <ul>
-      <li><a href="#funding">Funding</a></li>
-      <li><a href="#planning">Planning & Design</a></li>
-      <li><a href="#permits">Permits</a></li>
-      <li><a href="#restoration">Restoration</a></li>
-      <li><a href="#monitoring">Monitoring</a></li>
-    </ul>
+  <br />
+  <div id="content">
+    <q-list>
+      <q-item clickable v-ripple href="#funding">
+        <q-item-section>
+          <q-item-label>Funding</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#planning">
+        <q-item-section>
+          <q-item-label>Planning & Design</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#permits">
+        <q-item-section>
+          <q-item-label>Permits</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#restoration">
+        <q-item-section>
+          <q-item-label>Restoration</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#monitoring">
+        <q-item-section>
+          <q-item-label>Monitoring</q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
   </div>
+  <q-separator inset />
   <div id="funding" class="q-my-md">
     <div class="text-bold">Funding</div>
+    <br />
     <div>
       Generally, a dam removal involves multiple funding partners. There are
       several programs that provide funding for dam removal projects. The reason
@@ -81,8 +106,10 @@
       </div>
     </div>
   </div>
+  <q-separator inset />
   <div id="planning" class="q-my-md">
     <div class="text-bold">Planning</div>
+    <br />
     <div class="row">
       <div class="col">
         The owner, or the owner and partners should seek out an engineering firm
@@ -97,6 +124,7 @@
       <div id="planning-img" class="col"></div>
     </div>
   </div>
+  <q-separator inset />
   <div id="permits" class="q-my-md">
     <div class="text-bold">Permits</div>
     <br />
@@ -180,8 +208,10 @@
       </div>
     </div>
   </div>
+  <q-separator inset />
   <div id="restoration" class="q-my-md">
     <div class="text-bold">Restoration</div>
+    <br />
     <div>
       Although most rivers cannot be completely restored to historic conditions
       – simply because of the amount of development that has occurred on and
@@ -212,8 +242,10 @@
       through modeling and/or sounding surveys.
     </div>
   </div>
+  <q-separator inset />
   <div id="monitoring" class="q-my-md">
     <div class="text-bold">Monitoring</div>
+    <br />
     <div>
       Monitoring should be a key component of any dam removal process, both to
       ensure that project goals and objectives were met and to improve the
@@ -275,6 +307,21 @@
   </div>
 </template>
 <style scoped>
+#header-title {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#funding,
+#planning,
+#permits,
+#restoration,
+#monitoring {
+  scroll-margin-top: 80px;
+}
+
 #planning-img {
   background-image: url('/img_4172-2.webp');
   background-size: contain;
@@ -283,5 +330,12 @@
   width: 100%;
   height: 400px;
   margin-top: 10px;
+}
+
+#content {
+  position: fixed;
+  display: block;
+  left: 20px;
+  top: 80px;
 }
 </style>

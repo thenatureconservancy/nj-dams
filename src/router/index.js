@@ -8,6 +8,7 @@ import Resources from '../components/tabs/Resources.vue';
 import WhyRemove from '../components/tabs/WhyRemove.vue';
 import Contact from '../components/tabs/Contact.vue';
 import DamsInfo from '../components/tabs/DamsInfo.vue';
+import TheDashboard from '../components/TheDashboard.vue';
 
 const routes = [
   {
@@ -53,11 +54,11 @@ const routes = [
     name: 'news',
     component: News,
   },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact,
-  },
+  // {
+  //   path: '/contact',
+  //   name: 'contact',
+  //   component: Contact,
+  // },
   {
     path: '/map',
     name: 'map',

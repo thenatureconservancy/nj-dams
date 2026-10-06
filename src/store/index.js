@@ -1,25 +1,45 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
-export const useMapStore = defineStore('mapStore', () => ({
+export const useMapStore = defineStore('mapStore', () => {
   // MODELS
-  splitterModel: 25,
-  mobileSplitterModel: 35,
-  leftPanelInfo: false,
-  rightPanelVis: true,
-  leftDrawer: true,
-  envJusticeTract: false,
-  envJusticeTribe: false,
-  selectedCounty: '',
-  selectedCongressionalDistrict: '',
-  selectedOwner: '',
-  selectedHazardClassification: '',
-  selectedCondition: '',
-  mapDashboardOption: 'map',
+  const splitterModel = ref(25);
+  const mobileSplitterModel = ref(35);
+  const leftPanelInfo = ref(false);
+  const rightPanelVis = ref(true);
+  const leftDrawer = ref(true);
+  const envJusticeTract = ref(false);
+  const envJusticeTribe = ref(false);
+  const selectedCounty = ref('');
+  const selectedCongressionalDistrict = ref('');
+  const selectedOwner = ref('');
+  const selectedHazardClassification = ref('');
+  const selectedCondition = ref('');
+  const mapDashboardOption = ref('map');
+  const openContact = ref(false);
 
   // FUNCTIONS
-  getLayersInfo() {
+  function getLayersInfo() {
     // get and assign layers
     const webMap = document.querySelector('arcgis-map').view.map;
     console.log(webMap);
-  },
-}));
+  }
+
+  return {
+    splitterModel,
+    mobileSplitterModel,
+    leftPanelInfo,
+    rightPanelVis,
+    leftDrawer,
+    envJusticeTract,
+    envJusticeTribe,
+    selectedCounty,
+    selectedCongressionalDistrict,
+    selectedOwner,
+    selectedHazardClassification,
+    selectedCondition,
+    mapDashboardOption,
+    openContact,
+    getLayersInfo,
+  };
+});

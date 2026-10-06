@@ -16,6 +16,34 @@
     >
       <router-view></router-view>
     </div>
+    <div v-if="ms.openContact">
+      <!-- embedded microsoft form -->
+      <q-dialog v-model="ms.openContact">
+        <q-card>
+          <!-- <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">Contact Us</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section> -->
+          <q-card-section>
+            <iframe
+              width="800px"
+              height="800px"
+              src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=wW2-eY7Xu0uyK9mUwKQXp-UFI9yD40tPub0tyqfkLb9UMzlXMU42RjQ4Wkk1Q0E5WVdQSUs1UklKWC4u&embed=true"
+              frameborder="0"
+              marginwidth="0"
+              marginheight="0"
+              style="border: none; max-width: 100%; max-height: 100vh"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              msallowfullscreen
+            >
+            </iframe>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
+    </div>
   </div>
 </template>
 

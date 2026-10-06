@@ -1,6 +1,9 @@
 <template>
-  <div class="text-center text-h5 q-mb-md">Why Remove Dams?</div>
-  <div>
+  <div id="header-title" class="text-center text-h5 q-mb-md">
+    Why Remove Dams?
+  </div>
+  <q-separator inset />
+  <div class="q-my-md">
     <div class="text-bold">Safety and Security</div>
     <br />
     <div>
@@ -35,7 +38,8 @@
         </li>
       </ul>
     </div>
-    <div>
+    <q-separator inset />
+    <div class="q-my-md">
       <div class="text-bold">Regulatory Issues</div>
       <br />
       <div>
@@ -79,7 +83,8 @@
         ><br /><br />
       </div>
     </div>
-    <div>
+    <q-separator inset />
+    <div class="q-my-md">
       <div class="text-bold">Economics</div>
       <br />
       <div>
@@ -110,7 +115,8 @@
         </ul>
       </div>
     </div>
-    <div>
+    <q-separator inset />
+    <div class="q-my-md">
       <div class="text-bold">Environmental</div>
       <br />
       <div>
@@ -152,3 +158,11 @@ const editor = ref(
   'Whenever the Commissioner determines that a dam is in imminent danger of failure and has reasonable cause to believe that danger to life or property may be anticipated from the reservoir, dam or appurtenant structures located therein, and the owner of the dam or person having control of the reservoir or dam has failed to comply with an order to repair the dam or to take such interim measures as the Department determines are appropriate, including reducing the amount of water impounded by the dam or breaching the dam, the Department may, in addition to other actions authorized by the Safe Dam Act, this chapter and other law, enter upon any and all properties wherein the reservoir, dam or appurtenant structures are located, and using resources and personnel available to the Department, remove or cause to be removed the dam and/or appurtenant structures located therein, allowing the water to flow freely.',
 );
 </script>
+<style scoped>
+#header-title {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

@@ -11,12 +11,6 @@
         :active="activeTab === 'home'"
         label="HOME"
       />
-      <q-btn
-        flat
-        :to="{ name: 'faq' }"
-        :active="activeTab === 'faq'"
-        label="FAQ"
-      />
       <q-btn-dropdown stretch flat label="DAMS">
         <q-list>
           <q-item clickable v-ripple @click="$router.push('/dams-info')">
@@ -32,6 +26,18 @@
       </q-btn-dropdown>
       <q-btn
         flat
+        :to="{ name: 'map' }"
+        :active="activeTab === 'map'"
+        label="Explore Dams"
+      />
+      <q-btn
+        flat
+        :to="{ name: 'dashboard' }"
+        :active="activeTab === 'dashboard'"
+        label="Monitor Dams"
+      />
+      <!-- <q-btn
+        flat
         :to="{ name: 'case-studies' }"
         :active="activeTab === 'case-studies'"
         label="CASE STUDIES"
@@ -41,31 +47,43 @@
         :to="{ name: 'resources' }"
         :active="activeTab === 'resources'"
         label="RESOURCES"
-      />
-      <!-- <q-btn-dropdown stretch flat label="RESOURCES">
+      /> -->
+      <q-btn-dropdown stretch flat label="RESOURCES">
         <q-list>
           <q-item clickable v-ripple @click="$router.push('/resources')">
             <q-item-section>Resources</q-item-section>
           </q-item>
+          <q-item clickable v-ripple @click="$router.push('/case-studies')">
+            <q-item-section>Case Studies</q-item-section>
+          </q-item>
+          <q-item clickable v-ripple @click="$router.push('/news')">
+            <q-item-section>In the News</q-item-section>
+          </q-item>
         </q-list>
-      </q-btn-dropdown> -->
-      <q-btn
+      </q-btn-dropdown>
+      <!-- <q-btn
         flat
         :to="{ name: 'news' }"
         :active="activeTab === 'news'"
         label="IN THE NEWS"
-      />
-      <q-btn
-        flat
-        :to="{ name: 'map' }"
-        :active="activeTab === 'map'"
-        label="MAP & DASHBOARD"
-      />
-      <q-btn
+      /> -->
+      <!-- <q-btn
         flat
         :to="{ name: 'contact' }"
         :active="activeTab === 'contact'"
         label="Contact"
+      /> -->
+      <q-btn
+        flat
+        :to="{ name: 'faq' }"
+        :active="activeTab === 'faq'"
+        label="FAQ"
+      />
+      <q-btn
+        flat
+        :active="activeTab === 'contact'"
+        label="Contact"
+        @click="ms.openContact = true"
       />
     </div>
   </q-toolbar>
@@ -77,7 +95,9 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { useMapStore } from '../store/index';
 
+const ms = useMapStore();
 const route = useRoute();
 const activeTab = ref('home');
 const showScrollBtn = ref(false);

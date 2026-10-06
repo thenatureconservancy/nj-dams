@@ -42,6 +42,7 @@
     </q-page-container>
 
     <div
+      id="side-panel"
       class="shadow-3"
       style="
         position: absolute;
@@ -59,7 +60,7 @@
     >
       <q-scroll-area style="flex: 1; height: 100%">
         <div class="q-ma-md">
-          <div class="text-center">Explore New Jersey Dams</div>
+          <div class="text-center text-h6 q-my-md">Explore New Jersey Dams</div>
           <hr />
           <div>
             Use the map tools and filters to explore New Jersey dams. Click on a
@@ -138,7 +139,7 @@
       </q-scroll-area>
     </div>
 
-    <div id="button-toggle">
+    <!-- <div id="button-toggle">
       <q-btn-toggle
         v-model="ms.mapDashboardOption"
         :options="[
@@ -149,7 +150,7 @@
         text-color="white"
         toggle-color="primary"
       ></q-btn-toggle>
-    </div>
+    </div> -->
   </q-layout>
 </template>
 
