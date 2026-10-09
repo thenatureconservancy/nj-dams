@@ -7,11 +7,7 @@
         'q-my-lg': shouldApplyMargin && !isHomeRoute,
         'app-content--map': !shouldApplyMargin,
       }"
-      :style="
-        shouldApplyMargin && !isHomeRoute
-          ? 'margin-left: 300px; margin-right: 300px;'
-          : ''
-      "
+      :style="contentMargin"
       class="app-content"
     >
       <router-view></router-view>
@@ -70,8 +66,16 @@ const ms = useMapStore();
 const $q = useQuasar();
 const route = useRoute();
 let smallScreen = computed(() => $q.screen.lt.sm);
-const shouldApplyMargin = computed(() => route.name !== 'map');
+const shouldApplyMargin = computed(
+  () => !['map', 'dashboard'].includes(route.name),
+);
 const isHomeRoute = computed(() => route.name === 'home');
+const contentMargin = computed(() => {
+  if (!shouldApplyMargin.value || isHomeRoute.value) return '';
+  if ($q.screen.gt.md) return 'margin-left: 300px; margin-right: 300px;';
+  if ($q.screen.gt.sm) return 'margin-left: 100px; margin-right: 100px;';
+  return 'margin-left: 24px; margin-right: 24px;';
+});
 </script>
 
 <style scoped>

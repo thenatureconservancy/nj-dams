@@ -1,17 +1,23 @@
 <template>
   <div
-    class="row q-mb-lg"
+    class="row q-mb-lg shadow-2"
     style="
       background-image: url('header-bg.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 50% 80%;
       height: 40vh;
+      border-radius: 4px;
     "
   >
     <div
       class="col text-center text-white"
-      style="display: flex; align-items: center; justify-content: center"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+      "
     >
       <div
         style="
@@ -20,10 +26,14 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
+          border-radius: 4px;
         "
       >
         <span style="font-size: 30px; padding-top: 30px">WELCOME TO THE</span>
-        <h1 class="text-bold" style="margin: auto; width: fit-content">
+        <h1
+          class="text-bold"
+          style="margin: auto; max-width: 100%; padding: 0 16px"
+        >
           NEW JERSEY STATEWIDE DAM REMOVAL PARTNERSHIP
         </h1>
       </div>
@@ -183,5 +193,7 @@ const navigateToContact = () => {
 
 .btn-label {
   height: 150px !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 }
 </style>

@@ -1,63 +1,6 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <!-- <q-drawer show-if-above v-model="ms.leftDrawer" side="left" bordered>
-      <div>Test content here</div>
-    </q-drawer> -->
-
-    <q-page-container>
-      <arcgis-map
-        id="map"
-        item-id="758e1b9445b44ca8a8cd6e411305ae7f"
-        @arcgisViewReadyChange="onReady"
-      >
-        <arcgis-home position="top-right"></arcgis-home>
-        <arcgis-zoom position="top-right"></arcgis-zoom>
-        <arcgis-scale-bar
-          position="bottom-right"
-          unit="dual"
-        ></arcgis-scale-bar>
-        <arcgis-expand
-          close-on-esc
-          position="bottom-right"
-          mode="floating"
-          collapse-tooltip="Hide Legend"
-          expand-tooltip="Legend"
-        >
-          <arcgis-legend legend-style="classic"></arcgis-legend>
-        </arcgis-expand>
-        <arcgis-expand close-on-esc position="top-right" mode="floating">
-          <arcgis-basemap-gallery
-            position="top-right"
-            :source="source"
-          ></arcgis-basemap-gallery>
-        </arcgis-expand>
-        <arcgis-expand close-on-esc position="top-right" mode="floating">
-          <arcgis-layer-list
-            position="top-right"
-            view="map"
-            selection-mode="multiple"
-          ></arcgis-layer-list>
-        </arcgis-expand>
-      </arcgis-map>
-    </q-page-container>
-
-    <div
-      id="side-panel"
-      class="shadow-3"
-      style="
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        height: calc(100vh - 95px);
-        width: 400px;
-        max-width: calc(100vw - 30px);
-        background-color: white;
-        border-radius: 4px;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      "
-    >
+  <div class="map-view">
+    <div id="side-panel" class="shadow-3 bg-grey-3">
       <q-scroll-area style="flex: 1; height: 100%">
         <div class="q-ma-md">
           <div class="text-center text-h6 q-my-md">Explore New Jersey Dams</div>
@@ -88,13 +31,6 @@
             v-model="ms.selectedCongressionalDistrict"
             :disable="!!ms.selectedCounty"
           ></q-select>
-          <!-- <q-select
-          class="q-my-sm"
-          dense
-          outlined
-          label="HUC"
-          :options="countyOptions"
-        ></q-select> -->
           <br />
           <div>Dam Infrastructure</div>
           <q-select
@@ -124,7 +60,6 @@
             :options="conditionOptions"
             v-model="ms.selectedCondition"
           ></q-select>
-
           <br />
           <div>Community</div>
           <q-checkbox
@@ -139,19 +74,39 @@
       </q-scroll-area>
     </div>
 
-    <!-- <div id="button-toggle">
-      <q-btn-toggle
-        v-model="ms.mapDashboardOption"
-        :options="[
-          { label: 'Web Map', value: 'map' },
-          { label: 'Dashboard', value: 'dashboard' },
-        ]"
-        color="grey"
-        text-color="white"
-        toggle-color="primary"
-      ></q-btn-toggle>
-    </div> -->
-  </q-layout>
+    <arcgis-map
+      id="map"
+      class="shadow-2"
+      item-id="758e1b9445b44ca8a8cd6e411305ae7f"
+      @arcgisViewReadyChange="onReady"
+    >
+      <arcgis-home position="top-right"></arcgis-home>
+      <arcgis-zoom position="top-right"></arcgis-zoom>
+      <arcgis-scale-bar position="bottom-right" unit="dual"></arcgis-scale-bar>
+      <arcgis-expand
+        close-on-esc
+        position="bottom-right"
+        mode="floating"
+        collapse-tooltip="Hide Legend"
+        expand-tooltip="Legend"
+      >
+        <arcgis-legend legend-style="classic"></arcgis-legend>
+      </arcgis-expand>
+      <arcgis-expand close-on-esc position="top-right" mode="floating">
+        <arcgis-basemap-gallery
+          position="top-right"
+          :source="source"
+        ></arcgis-basemap-gallery>
+      </arcgis-expand>
+      <arcgis-expand close-on-esc position="top-right" mode="floating">
+        <arcgis-layer-list
+          position="top-right"
+          view="map"
+          selection-mode="multiple"
+        ></arcgis-layer-list>
+      </arcgis-expand>
+    </arcgis-map>
+  </div>
 </template>
 
 <script setup>
@@ -405,6 +360,20 @@ const onReady = (event) => {
   damsLayer = dams_csv;
   mapView.map.add(dams_csv);
 
+  mapView.on('click', async (event) => {
+    const response = await mapView.hitTest(event);
+    const results = response.results.filter(
+      (r) => r.graphic.layer === damsLayer,
+    );
+    if (results.length) {
+      const feature = results[0].graphic;
+      mapView.goTo({
+        target: feature.geometry,
+        zoom: 12,
+      });
+    }
+  });
+
   webMap.allLayers.forEach((layer) => {
     console.log(layer.title);
     layer.listMode = 'show';
@@ -422,8 +391,37 @@ const onReady = (event) => {
 </script>
 
 <style>
+.map-view {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#side-panel {
+  width: 400px;
+  max-width: calc(100vw - 30px);
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#map {
+  flex: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+}
+
 @media screen and (max-width: 700px) {
-  #map {
+  .map-view {
+    flex-direction: column;
+  }
+  #side-panel {
     width: 100%;
     min-height: 20vh;
   }
@@ -434,12 +432,5 @@ const onReady = (event) => {
 
 .esri-basemap-gallery {
   margin-bottom: 0px !important;
-}
-
-#button-toggle {
-  position: fixed;
-  top: 65px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 </style>
