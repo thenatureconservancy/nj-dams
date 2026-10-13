@@ -1,5 +1,5 @@
 <template>
-  <div id="header-title" class="text-center text-h5 q-mb-md">
+  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
     How to Remove a Dam
   </div>
   <div>
@@ -312,6 +312,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f5f5f5; /* Light gray background for the header */
+  border-radius: 4px;
 }
 
 #funding,

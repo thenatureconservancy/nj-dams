@@ -25,9 +25,110 @@
       </arcgis-map>
     </div>
     <div class="dashboard__panels">
-      <div class="shadow-2 panel" id="num-dams"></div>
-      <div class="shadow-2 panel" id="num-miles"></div>
-      <div class="shadow-2 panel" id="countdown"></div>
+      <div class="shadow-2 panel" id="countdown">
+        <div class="text-center stat-label">Current Dams Being Removed</div>
+        <div class="q-mt-sm">
+          <q-scroll-area style="height: 360px; max-width: 100%">
+            <q-list dense>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section> Dam Name </q-item-section>
+              </q-item>
+            </q-list>
+          </q-scroll-area>
+        </div>
+      </div>
+      <div class="shadow-2 panel" id="num-dams">
+        <div class="text-center stat-label">Num. of Dams Removed</div>
+        <div class="stat-value">
+          <span class="material-icons-outlined text-primary">
+            remove_circle_outline </span
+          >25
+        </div>
+      </div>
+      <div class="shadow-2 panel" id="num-miles">
+        <div class="text-center stat-label">Num. of Miles Reconnected</div>
+        <div class="stat-value">
+          <span class="material-icons-outlined text-primary"> water </span>100
+        </div>
+      </div>
       <div class="shadow-2 panel" id="chart-1"></div>
       <div class="shadow-2 panel" id="chart-2"></div>
       <div class="shadow-2 panel" id="chart-3"></div>
@@ -63,5 +164,14 @@
   background-color: #f5f5f5;
   border-radius: 4px;
   padding: 16px;
+}
+
+.stat-value {
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  height: 100%;
 }
 </style>

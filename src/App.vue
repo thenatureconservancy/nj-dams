@@ -113,6 +113,10 @@ const contentMargin = computed(() => {
   }
 }
 
+/* #form-main-content1 {
+  overflow: hidden !important;
+} */
+
 /* Slide transition */
 /* .slide-enter-active,
 .slide-leave-active {

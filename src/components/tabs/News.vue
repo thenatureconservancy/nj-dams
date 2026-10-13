@@ -1,5 +1,7 @@
 <template>
-  <div class="text-center text-h5 q-mb-md">In the News</div>
+  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
+    In the News
+  </div>
   <div>
     <div>
       <q-list dense padding>
@@ -48,3 +50,14 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+#header-title {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; /* Light gray background for the header */
+  border-radius: 4px;
+}
+</style>

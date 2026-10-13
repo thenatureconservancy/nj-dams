@@ -1,5 +1,7 @@
 <template>
-  <div class="text-center text-h5 q-mb-md">Case Studies</div>
+  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
+    Case Studies
+  </div>
   <div>
     <div class="text-bold">Fact Sheets</div>
     <div class="photo-gallery">
@@ -128,5 +130,13 @@
   .photo-gallery {
     grid-template-columns: 1fr;
   }
+}
+#header-title {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5; /* Light gray background for the header */
+  border-radius: 4px;
 }
 </style>

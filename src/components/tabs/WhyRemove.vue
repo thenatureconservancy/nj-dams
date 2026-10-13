@@ -1,8 +1,8 @@
 <template>
-  <div id="header-title" class="text-center text-h5 q-mb-md">
+  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
     Why Remove Dams?
   </div>
-  <q-separator inset />
+  <!-- <q-separator inset /> -->
   <div class="q-my-md">
     <div class="text-bold">Safety and Security</div>
     <br />
@@ -164,5 +164,7 @@ const editor = ref(
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f5f5f5; /* Light gray background for the header */
+  border-radius: 4px;
 }
 </style>
