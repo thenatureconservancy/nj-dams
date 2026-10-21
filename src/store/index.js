@@ -17,6 +17,7 @@ export const useMapStore = defineStore('mapStore', () => {
   const selectedCondition = ref('');
   const mapDashboardOption = ref('map');
   const openContact = ref(false);
+  const openDamFactsheet = ref(false);
 
   // FUNCTIONS
   function getLayersInfo() {
@@ -40,6 +41,7 @@ export const useMapStore = defineStore('mapStore', () => {
     selectedCondition,
     mapDashboardOption,
     openContact,
+    openDamFactsheet,
     getLayersInfo,
   };
 });
