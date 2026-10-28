@@ -1,7 +1,5 @@
 <template>
-  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
-    Why Remove Dams?
-  </div>
+  <h2 id="header-title">Why Remove Dams?</h2>
   <!-- <q-separator inset /> -->
   <div class="q-my-md">
     <div class="text-bold">Safety and Security</div>
@@ -121,31 +119,32 @@
       <br />
       <div>
         Dams impact every aspect of healthy rivers including the fishes we like
-        to eat and fish. If we want to keep certain fish species…, like eel,
-        sturgeon, and salmon, we must restore connectivity from sea to source.
-        Not only do fish rely on natural river systems but also many other
-        species living in the water and on land depend on and would benefit from
-        free-flowing rivers.
+        to eat and fish. If we want to keep certain fish species… like American
+        eel, American shad, and River Herring, we must restore connectivity from
+        sea to source. Not only do fish rely on natural river systems but also
+        many other species living in the water and on land depend on and would
+        benefit from free-flowing rivers.
         <ul>
           <li>
-            Dams lead to loss of river habitat as the river is transferred into
-            impoundments (impoundments or reservoirs are not lakes).
+            Dams disrupt free-flowing rivers by impounding water upstream,
+            transforming a flowing river into a slower-moving, pond-like
+            environment. (impoundments or reservoirs are not lakes)
           </li>
           <li>
-            Dams cause severe changes to the hydro and sediment dynamics in the
-            river. This impact can reach hundreds of kilometers downstream
-            affecting deltas and favoring different, often invasive species.
+            Dams cause significant changes to river hydrology and sediment
+            dynamics. These impacts can extend hundreds of kilometers
+            downstream, affecting river channels, floodplains, and deltas.
           </li>
           <li>
-            Dams seriously impede the migration of fishes which directly results
-            in a decline and even local extinction of many species.
+            Dams block the migration of fishes which directly results in a
+            decline and even local extinction of many species.
           </li>
-          <li>
+          <!-- <li>
             Material From:
             <a href="https://www.damremoval.eu/" target="_blank"
               >https://www.damremoval.eu/</a
             >
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -160,11 +159,7 @@ const editor = ref(
 </script>
 <style scoped>
 #header-title {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5; /* Light gray background for the header */
-  border-radius: 4px;
+  border-left: 4px solid black;
+  padding-left: 1rem;
 }
 </style>

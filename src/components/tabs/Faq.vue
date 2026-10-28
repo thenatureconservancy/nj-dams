@@ -1,7 +1,5 @@
 <template>
-  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
-    Frequently Asked Questions
-  </div>
+  <h2 id="header-title">Frequently Asked Questions</h2>
   <div>
     <q-expansion-item
       default-opened
@@ -891,11 +889,7 @@
 </template>
 <style scoped>
 #header-title {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5; /* Light gray background for the header */
-  border-radius: 4px;
+  border-left: 4px solid black;
+  padding-left: 1rem;
 }
 </style>

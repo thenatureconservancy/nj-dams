@@ -1,7 +1,5 @@
 <template>
-  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
-    How to Remove a Dam
-  </div>
+  <h2 id="header-title">How to Remove a Dam</h2>
   <div>
     In the vast majority of cases, dam removals only proceed with the consent of
     the dam owner. The owner, or the owner and partners, must begin the dam
@@ -68,42 +66,9 @@
       several programs that provide funding for dam removal projects. The reason
       for removing a dam (habitat improvement, public safety, flooding) may make
       a project eligible for certain funding sources and ineligible for others.
-      <br /><br />
-      Federal agencies often support dam removal projects including the National
-      Oceanic and Atmospheric Administration (NOAA), the U.S. Fish and Wildlife
-      Service (USFWS), Natural Resources Conservation Service (NRCS), and the
-      U.S. Corps of Engineers (USACE). Natural resource damage settlements and
-      required mitigation also provide opportunities for funding projects. Of
-      course, the dam owner may also contribute to the costs associated with
-      removing their dam. In some instances, settlement of state or federal
-      natural resource damage claims can be a source of dam removal funds. For
-      more information on that course, contact the NJDEP Office of Natural
-      Resource Restoration for guidance. Some examples of funding sources used
-      in recent dam removals in New Jersey include:
-      <div class="text-center">
-        <ul style="display: inline-block; text-align: left">
-          <li>
-            NJ Department of Environmental Protection (Office of Natural
-            Resource Restoration)
-          </li>
-          <li>U.S. Fish and Wildlife Service</li>
-          <li>USDA Natural Resources Conservation Service</li>
-          <li>Corporate Wetlands Restoration Partnership</li>
-          <li>National Fish and Wildlife Foundation</li>
-          <li>Atlantic Coastal Fish Habitat Partnership</li>
-          <li>Delaware Watershed Conservation Fund</li>
-          <li>Tom’s of Maine</li>
-          <li>Municipalities/Counties</li>
-          <li>Donations from private funders</li>
-        </ul>
-        <br /><br />
-        <q-btn
-          label="Funding Sources for Dam Removals"
-          href="/dam-funding.pdf"
-          target="_blank"
-          color="primary"
-        />
-      </div>
+    </div>
+    <div class="q-mb-md q-mt-lg text-center">
+      <q-btn label="Learn More About Funding" color="primary"></q-btn>
     </div>
   </div>
   <q-separator inset />
@@ -241,79 +206,234 @@
       the river. The water surface level after a dam removal can be predicted
       through modeling and/or sounding surveys.
     </div>
+
+    <div class="q-my-md">
+      <ul>
+        <li>
+          <a href="https://www.americanrivers.org/" target="_blank"
+            >AR = American Rivers</a
+          >
+        </li>
+        <li>
+          <a href="https://www.des.nh.gov/" target="_blank"
+            >NHDES = New Hampshire Department of Environmental Services</a
+          >
+        </li>
+        <li>
+          <a href="https://www.damsafety.org/" target="_blank"
+            >ASDSO = Association of State Dam Safety Officials</a
+          >
+        </li>
+        <li>
+          <a href="https://dep.nj.gov/wlm/drec/dam-safety/" target="_blank"
+            >NJDS = New Jersey Dam Safety</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div>
+        <div class="text-bold q-my-md">
+          Can rivers be restored through dam removal?
+        </div>
+        <div>
+          Although most rivers cannot be completely restored to historic
+          conditions – simply because of the amount of development that has
+          occurred on and along them – dam removal can often recreate conditions
+          that move the river towards those historic conditions. For example,
+          migratory fish are returning to the Musconetcong, Millstone, and
+          Paulins Kill after dam removals on those rivers.
+          <br /><br />
+          Nationally, fish are returning to historic stretches of river that had
+          been previously obstructed on Butte Creek in California, the
+          Souadabscook River in Maine, and the Clearwater River in Idaho, as a
+          result of dam removals. (AR)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          Will the removal of a dam matter if other dams in the system are not
+          removed?
+        </div>
+        <div>
+          Some rivers are so heavily developed and dammed that removal of one
+          dam on that river will only return flows to a small portion of the
+          river. Generally, dams that have been targeted for removal are
+          strategically located – removal will open up a section of the river
+          critical to fish and wildlife and/or recreation. In some cases, this
+          additional section of river is enough to sustain crucial populations
+          of endangered or threatened species of fish, mollusks, and other
+          wildlife. (AR)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">How does dam removal affect fish?</div>
+        <div>
+          Dam removal benefits fish in many ways, including: (1) removing
+          obstructions to upstream and downstream migration; (2) restoring
+          natural riverine habitat; (3) restoring natural seasonal flow
+          variations; (4) eliminating siltation of spawning and feeding habitat
+          above the dam; (5) allowing debris, small rocks and nutrients to pass
+          below the dam, creating healthy habitat; (6) eliminating unnatural
+          temperature variations below the dam; and (7) removing turbines that
+          kill fish. (AR)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          How will the dam’s removal affect fish and wildlife habitats in the
+          area?
+        </div>
+        <div>
+          Dams alter the natural physical, biological and chemical functions of
+          rivers. And, since healthy rivers are considered the lifeblood of
+          healthy habitats, dams can result in unsustainable and degraded
+          conditions for a variety of aquatic and terrestrial species. The
+          habitats that have been created solely because of the dam’s presence
+          will change if the dam is removed. For instance, a deep water marsh
+          may be restored to a shallow marsh or a wet meadow. NJ Fish and
+          Wildlife and other natural resources agencies can help provide
+          site-specific information and predicted changes. (NHDES)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          How will fishing opportunities change if the dam is removed?
+        </div>
+        <div>
+          Dam removal improves the health of the river and aquatic habitat,
+          typically to such an extent that anglers can look forward to increased
+          numbers of fish and more places to fish for them. In some cases,
+          removing a dam will change the type of fishery. For instance, a warm
+          water fishery may be restored to a cool or coldwater fishery. In many
+          cases, free-flowing rivers allow a wider variety of warm, cool and
+          coldwater species to seasonally occupy portions of the same river,
+          providing greater fishing variety. Anglers often like to fish right
+          below dams, and some may oppose removal because they feel they’ll lose
+          a good fishing spot. But it’s important to realize that the fish
+          aren’t necessarily there because it’s good habitat, they’re often
+          there because they’re prevented from moving further upstream. (NHDES)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          What will the restored river look like?
+        </div>
+        <div>
+          Generally, the easiest way to predict how a river would look if a dam
+          were removed is to look at the river upstream of the impoundment and
+          downstream of the dam. Unless there is a significant geologic feature
+          (e.g., a waterfall) in the impounded stretch of the river, it is
+          unlikely that the restored river will be significantly different than
+          what is seen in free-flowing parts of the river. Bear in mind that
+          some dams are built to artificially raise the water level of a natural
+          lake or pond. If that is the case, the extent of the pond post-dam
+          removal can be predicted through modeling and/or sounding surveys.
+          (NHDES)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          What will the newly exposed pond bottom look like?
+        </div>
+        <div>
+          Land will be exposed when an impoundment is drawn down during dam
+          removal. The amount of land that will be exposed depends upon the site
+          conditions. If nearby sections of the free-flowing river have rocky
+          banks, chances are that the restored section will too. If nearby
+          sections of the river are vegetated, chances are that newly exposed
+          lands will re-vegetate within a matter of weeks during growing
+          seasons, thanks to the many seeds that have accumulated in the
+          sediment over the years. Depending on the time of year and make-up of
+          the sediment that is exposed, there may be an odor of decomposition
+          for a short period of time (typically ranging from a few days to a few
+          weeks). However, once this “new” land is exposed to sunlight and
+          oxygen, plants grow very quickly, drying up the water-logged sediment
+          in the process. Of course, if the exposed land is subject to tidal
+          action or other significant water level fluctuations, this area may
+          not revegetate as much or as quickly. (NHDES)
+        </div>
+      </div>
+      <div>
+        <div class="text-bold q-my-md">
+          How quickly do rivers recover after dam removal?
+        </div>
+        <div>
+          Rivers are very dynamic and resilient systems. Experience has shown
+          that natural river systems can be restored relatively rapidly after
+          dam removal. For example, spawning fish returned to the
+          <a class="factsheet-link" @click="openFactsheet('hughesville-dam-factsheet.png')"
+            >Musconetcong</a
+          >,
+          <a class="factsheet-link" @click="openFactsheet('weston-mill-dam-factsheet.png')">Millstone</a
+          >, and
+          <a class="factsheet-link" @click="openFactsheet('columbia-lake-dam-factsheet.png')"
+            >Paulins Kill</a
+          >
+          Rivers only months after dam removal projects there. (AR)
+        </div>
+      </div>
+    </div>
   </div>
   <q-separator inset />
   <div id="monitoring" class="q-my-md">
     <div class="text-bold">Monitoring</div>
     <br />
     <div>
-      Monitoring should be a key component of any dam removal process, both to
-      ensure that project goals and objectives were met and to improve the
-      practice of dam removal. The project team should develop a monitoring plan
-      that covers pre‐project monitoring, monitoring during construction and
-      post-project monitoring. A project might be monitored for changes in fish
-      population, temperature, dissolved oxygen, or physical changes to the
-      stream channel among other things. Many permits will also require some
-      form of project monitoring.
+      Monitoring is a critical part of dam removal projects, helping evaluate
+      project success, meet permit requirements, and track environmental
+      improvements before, during, and after removal. Monitoring may include
+      water quality, stream conditions, sediment movement, and fish and wildlife
+      populations. Guidance and standardized metrics from the SDRP and other
+      organizations help project teams collect consistent data and measure both
+      short- and long-term project benefits.
       <br /><br />
-      There are many documents which describe methods for monitoring, for
-      example, the Gulf of Maine Council on the Marine Environment developed a
-      handbook titled, “Stream Barrier and Removal Guide.” This guide provides
-      pre‐ and post‐dam removal monitoring guidelines that provide methods to
-      assess impacts on sediment transport, stream channel morphology, fish
-      passage, macroinvertebrates, water quality, and riparian vegetative
-      communities. The guide is available online.
-      <br /><br />
-      In addition to the guidance available online, the Monitoring Partners of
-      the Statewide Dam Removal Partnership (SDRP) have created a comprehensive
-      monitoring guide, which includes a universal suite of monitoring
-      parameters (aka metrics) specific to dam removal monitoring. The guidance
-      below is designed to help organize monitoring efforts needed to achieve
-      dam removal project goals. Within each of the links below, you will find
-      information about individual metrics, such as their importance to dam
-      removal monitoring, defined monitoring goals (required by permit, state
-      surface water quality standards, project and/or research related) and
-      acceptable methodology for data collection. Depending on the project,
-      monitoring may be required by permit to assess water quality parameters
-      like sediment, and/or turbidity or for biological assessments of fish
-      species and/or mussel populations. Chemical, physical or biological
-      monitoring can also be used to determine water quality impairments and
-      compared against the state’s surface water quality standards. Monitoring
-      efforts will also allow project managers to determine pre existing water
-      quality conditions and document improvements to water quality post
-      removal. When funding and capacity allow, research related monitoring can
-      be a great way to evaluate the long term ecological, sociological and
-      economic benefits of your project.
-      <br /><br />
-      The guidance to the right is intended to provide the basic information
-      project managers will need to begin dam removal project monitoring. A
-      number of useful reference links for individual metrics are included and
-      provide more information for individual metrics. Furthermore, The SDRP
-      Monitoring Partners are here to help. If you are interested in or required
-      to monitor your dam removal project, please contact us with your questions
-      via the Contact page.
-      <br /><br />
-      Disclaimer: The information presented here is a suggested guide to
-      monitoring and is to be used as such. Please reach out to regulators early
-      about any additional regulatory requirements, including any required
-      methods.
-    </div>
-    <div>
-      <div class="text-caption">
-        Click on the photos below to learn more about each topic.
+      <div class="text-center">
+        <q-btn
+          color="primary"
+          class="q-mt-md"
+          label="Learn More About Monitoring"
+          @click="navigateToMonitoring"
+        ></q-btn>
       </div>
-      <div class="text-bold">CLICK PHOTOS GO HERE</div>
     </div>
   </div>
+  <q-dialog v-model="showFactsheet">
+    <q-card>
+      <q-card-section>
+        <img
+          v-if="selectedFactsheet"
+          :src="`/restoration/${selectedFactsheet}`"
+          :alt="selectedFactsheet"
+          style="width: 100%; height: auto; border-radius: 4px"
+        />
+      </q-card-section>
+    </q-card>
+  </q-dialog>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const showFactsheet = ref(false);
+const selectedFactsheet = ref(null);
+
+const openFactsheet = (filename) => {
+  selectedFactsheet.value = filename;
+  showFactsheet.value = true;
+};
+
+const navigateToMonitoring = () => {
+  router.push({ name: 'monitoring' });
+};
+</script>
+
 <style scoped>
 #header-title {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5; /* Light gray background for the header */
-  border-radius: 4px;
+  border-left: 4px solid black;
+  padding-left: 1rem;
 }
 
 #funding,
@@ -339,5 +459,16 @@
   display: block;
   left: 20px;
   top: 80px;
+}
+
+.factsheet-link {
+  color: #1976d2;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.factsheet-link:hover {
+  color: #1565c0;
 }
 </style>

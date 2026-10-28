@@ -1,7 +1,15 @@
 <template>
   <q-toolbar class="bg-primary text-white shadow-2 sticky-header">
     <!-- <q-btn flat label="New Jersey Dams" style="font-size: 20px" /> -->
-    <div style="font-size: 25px; white-space: nowrap; flex-shrink: 0">
+    <div
+      style="
+        font-size: 25px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        cursor: pointer;
+      "
+      @click="$router.push({ name: 'home' })"
+    >
       NEW JERSEY DAMS
     </div>
     <q-space />
@@ -39,6 +47,12 @@
               a Dam</q-item-section
             >
           </q-item>
+          <q-item clickable v-ripple @click="$router.push('/monitoring')">
+            <q-item-section>Monitoring</q-item-section>
+          </q-item>
+          <q-item clickable v-ripple @click="$router.push('/funding')">
+            <q-item-section>Funding</q-item-section>
+          </q-item>
         </q-list>
       </q-btn-dropdown>
       <q-btn
@@ -51,24 +65,12 @@
         flat
         :to="{ name: 'dashboard' }"
         :active="activeTab === 'dashboard'"
-        label="Monitor Dams"
+        label="SDRP Projects"
       />
-      <!-- <q-btn
-        flat
-        :to="{ name: 'case-studies' }"
-        :active="activeTab === 'case-studies'"
-        label="CASE STUDIES"
-      />
-      <q-btn
-        flat
-        :to="{ name: 'resources' }"
-        :active="activeTab === 'resources'"
-        label="RESOURCES"
-      /> -->
       <q-btn-dropdown stretch flat label="RESOURCES" hover aria-haspopup="menu">
         <q-list>
           <q-item clickable v-ripple @click="$router.push('/resources')">
-            <q-item-section>Resources</q-item-section>
+            <q-item-section>References</q-item-section>
           </q-item>
           <q-item clickable v-ripple @click="$router.push('/case-studies')">
             <q-item-section>Case Studies</q-item-section>
@@ -76,20 +78,21 @@
           <q-item clickable v-ripple @click="$router.push('/news')">
             <q-item-section>In the News</q-item-section>
           </q-item>
+          <q-item clickable v-ripple @click="$router.push('/videos')">
+            <q-item-section>Videos</q-item-section>
+          </q-item>
+          <q-item
+            clickable
+            v-ripple
+            @click="$router.push('/reports-publications')"
+          >
+            <q-item-section>Reports and<br />Publications</q-item-section>
+          </q-item>
+          <q-item clickable v-ripple @click="$router.push('/data')">
+            <q-item-section>Data</q-item-section>
+          </q-item>
         </q-list>
       </q-btn-dropdown>
-      <!-- <q-btn
-        flat
-        :to="{ name: 'news' }"
-        :active="activeTab === 'news'"
-        label="IN THE NEWS"
-      /> -->
-      <!-- <q-btn
-        flat
-        :to="{ name: 'contact' }"
-        :active="activeTab === 'contact'"
-        label="Contact"
-      /> -->
       <q-btn
         flat
         :to="{ name: 'faq' }"

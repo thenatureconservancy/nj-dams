@@ -1,7 +1,8 @@
 <template>
-  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
+  <!-- <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
     Dams 101
-  </div>
+  </div> -->
+  <h2 id="header-title">Dams 101</h2>
   <div id="content">
     <q-list>
       <q-item clickable v-ripple href="#what">
@@ -24,11 +25,11 @@
           <q-item-label>Vocabulary</q-item-label>
         </q-item-section>
       </q-item>
-      <q-item clickable v-ripple href="#video">
+      <!-- <q-item clickable v-ripple href="#video">
         <q-item-section>
           <q-item-label>Videos</q-item-label>
         </q-item-section>
-      </q-item>
+      </q-item> -->
     </q-list>
   </div>
   <!-- <q-separator inset /> -->
@@ -53,8 +54,12 @@
     <div class="q-mb-md">
       There are several different types of dams. Below are three diagrams of
       common dams found in New Jersey. A more detailed description of the
-      different types of dams can be found in the Pocket Safety Guide for Dams
-      and Impoundments.
+      different types of dams can be found in the
+      <a
+        href="https://damsafety.s3.amazonaws.com/s3fs-public/files/FEMA%20Pocket%20Safety%20Guide%20911.pdf"
+        target="_blank"
+        >Pocket Safety Guide for Dams and Impoundments</a
+      >.
     </div>
     <div class="dam-imgs">
       <div id="embankment"></div>
@@ -274,10 +279,13 @@
       in the waterway at an intake so as to prevent the ingress of floating or
       submerged debris.
       <br /><br />
-      Source: Basic Terms of Dam Characteristics
+      Source:
+      <a href="/basic-terms-of-dam-characteristics.pdf" target="_blank"
+        >Basic Terms of Dam Characteristics</a
+      >
     </div>
   </div>
-  <q-separator inset /><br />
+  <!-- <q-separator inset /><br />
   <div id="video" class="text-bold">Videos</div>
   <div id="videos" class="q-my-md">
     <div>
@@ -322,16 +330,21 @@
         by John W. Jengo, PG
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 <style scoped>
-#header-title {
+/* #header-title {
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5f5; /* Light gray background for the header */
+  background-color: #f5f5f5; 
   border-radius: 4px;
+} 
+*/
+#header-title {
+  border-left: 4px solid black;
+  padding-left: 1rem;
 }
 
 #what,
@@ -368,7 +381,7 @@
 }
 
 #earthen {
-  background-image: url('/embankment-dam-diagram.png');
+  background-image: url('/thumbnail_embankment-cross-section.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

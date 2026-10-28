@@ -1,7 +1,5 @@
 <template>
-  <div id="header-title" class="shadow-1 text-center text-h5 q-mb-lg">
-    Case Studies
-  </div>
+  <h2 id="header-title">Case Studies</h2>
   <div>
     <div class="text-bold">Fact Sheets</div>
     <div class="photo-gallery">
@@ -35,8 +33,8 @@
     </q-card>
   </q-dialog>
   <div>
-    <div class="text-bold q-mb-md">Videos on New Jersey Dam Removals</div>
-    <div>
+    <!-- <div class="text-bold q-mb-md">Dam Removals in Action</div> -->
+    <!-- <div>
       <div class="row">
         <div class="col q-mx-md q-mb-md">
           <q-video
@@ -65,15 +63,15 @@
           />
         </div>
       </div>
-      <!-- <div class="row">
+      <div class="row">
         <div class="col q-mx-md q-mb-md">
           <q-video
             :ratio="16 / 9"
             src="https://www.youtube.com/embed/cCQiaT1KcPo"
           />
         </div>
-      </div> -->
-    </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -219,11 +217,7 @@ export default {
   }
 }
 #header-title {
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5; /* Light gray background for the header */
-  border-radius: 4px;
+  border-left: 4px solid black;
+  padding-left: 1rem;
 }
 </style>

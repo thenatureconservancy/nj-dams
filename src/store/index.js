@@ -10,14 +10,20 @@ export const useMapStore = defineStore('mapStore', () => {
   const leftDrawer = ref(true);
   const envJusticeTract = ref(false);
   const envJusticeTribe = ref(false);
-  const selectedCounty = ref('');
-  const selectedCongressionalDistrict = ref('');
-  const selectedOwner = ref('');
-  const selectedHazardClassification = ref('');
-  const selectedCondition = ref('');
+  const selectedCounty = ref([]);
+  const selectedCongressionalDistrict = ref([]);
+  const selectedOwner = ref([]);
+  const selectedHazardClassification = ref([]);
+  const selectedCondition = ref([]);
   const mapDashboardOption = ref('map');
   const openContact = ref(false);
   const openDamFactsheet = ref(false);
+  const displayLegend = ref(true);
+  const dashboardInfo = ref(true);
+  const overburdenedVis = ref(false);
+  const waterbodiesAlert = ref(false);
+  const waterbodiesVis = ref(false);
+  const numberOfDams = ref(2632);
 
   // FUNCTIONS
   function getLayersInfo() {
@@ -42,6 +48,12 @@ export const useMapStore = defineStore('mapStore', () => {
     mapDashboardOption,
     openContact,
     openDamFactsheet,
+    displayLegend,
+    dashboardInfo,
+    overburdenedVis,
+    waterbodiesAlert,
+    waterbodiesVis,
     getLayersInfo,
+    numberOfDams,
   };
 });

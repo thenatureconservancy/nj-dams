@@ -9,6 +9,11 @@ import WhyRemove from '../components/tabs/WhyRemove.vue';
 import Contact from '../components/tabs/Contact.vue';
 import DamsInfo from '../components/tabs/DamsInfo.vue';
 import TheDashboard from '../components/TheDashboard.vue';
+import Monitoring from '../components/tabs/Monitoring.vue';
+import Funding from '../components/tabs/Funding.vue';
+import Videos from '../components/tabs/Videos.vue';
+import ReportsPublications from '../components/tabs/ReportsPublications.vue';
+import Data from '../components/tabs/Data.vue';
 
 const routes = [
   {
@@ -57,6 +62,31 @@ const routes = [
     component: TheDashboard,
   },
   {
+    path: '/monitoring',
+    name: 'monitoring',
+    component: Monitoring,
+  },
+  {
+    path: '/funding',
+    name: 'funding',
+    component: Funding,
+  },
+  {
+    path: '/videos',
+    name: 'videos',
+    component: Videos,
+  },
+  {
+    path: '/reports-publications',
+    name: 'reports-publications',
+    component: ReportsPublications,
+  },
+  {
+    path: '/data',
+    name: 'data',
+    component: Data,
+  },
+  {
     path: '/map',
     name: 'map',
     component: () => import('../components/TheMap.vue'),
@@ -66,6 +96,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+});
+
+router.afterEach(() => {
+  window.scrollTo(0, 0);
 });
 
 export default router;
