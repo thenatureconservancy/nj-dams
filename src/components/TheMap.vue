@@ -575,6 +575,10 @@ const onReady = (event) => {
   webMap.allLayers.forEach((layer) => {
     console.log(layer.title);
     layer.listMode = 'show';
+    // Disable popups for all layers except the Dams layer
+    if (layer !== damsLayer) {
+      layer.popupTemplate = null;
+    }
   });
 
   // Watch for visibility changes of Overburdened Communities layer

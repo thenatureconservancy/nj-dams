@@ -4,14 +4,11 @@
     Federal agencies often support dam removal projects including the National
     Oceanic and Atmospheric Administration (NOAA), the U.S. Fish and Wildlife
     Service (USFWS), Natural Resources Conservation Service (NRCS), and the U.S.
-    Corps of Engineers (USACE). Natural resource damage settlements and required
-    mitigation also provide opportunities for funding projects. Of course, the
-    dam owner may also contribute to the costs associated with removing their
-    dam. In some instances, settlement of state or federal natural resource
-    damage claims can be a source of dam removal funds. For more information on
-    that course, contact the NJDEP Office of Natural Resource Restoration for
-    guidance. Some examples of funding sources used in recent dam removals in
-    New Jersey include:
+    Corps of Engineers (USACE). In some instances, settlement of state or
+    federal natural resource damage claims can be a source of funds for dam
+    removal. Of course, the dam owner may also contribute to the costs
+    associated with removing their dam. Some examples of funding sources used in
+    recent dam removals in New Jersey include:
     <div>
       <ul style="display: inline-block; text-align: left">
         <li>
@@ -43,6 +40,15 @@
 <style scoped>
 #header-title {
   border-left: 4px solid black;
-  padding-left: 1rem;
+  padding: 1rem;
+  background-color: white;
+  background-image: linear-gradient(
+    45deg,
+    white,
+    rgb(238, 241, 238),
+    rgb(166, 195, 166)
+  ) !important;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 </style>

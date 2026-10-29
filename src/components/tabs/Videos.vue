@@ -1,7 +1,7 @@
 <template>
   <h2 id="header-title">Videos</h2>
   <div>
-    <div class="text-bold">Voices of Dam Removal</div>
+    <div class="text-bold q-my-md">Voices of Dam Removal</div>
     <div class="q-my-md">
       In this short video series, Voices of Dam Removal, we explore the vital
       role that local and county governments, homeowners, recreational users,
@@ -86,7 +86,7 @@
     </div>
   </div>
   <div>
-    <div class="text-bold">Dams 101</div>
+    <div class="text-bold q-my-md">Dams 101</div>
     <div>
       <div class="row">
         <div class="col q-mx-md q-mb-md">
@@ -138,7 +138,7 @@
     </div>
   </div>
   <div>
-    <div class="text-bold">Dam Removal in Action</div>
+    <div class="text-bold q-my-md">Dam Removal in Action</div>
     <div>
       <div class="row">
         <div class="col q-mx-md q-mb-md">
@@ -179,7 +179,7 @@
     </div>
   </div>
   <div>
-    <div class="text-bold">Webinars</div>
+    <div class="text-bold q-my-md">Webinars</div>
     <div>
       <div class="row">
         <div class="col q-mx-md q-mb-md">
@@ -337,6 +337,15 @@
 <style scoped>
 #header-title {
   border-left: 4px solid black;
-  padding-left: 1rem;
+  padding: 1rem;
+  background-color: white;
+  background-image: linear-gradient(
+    45deg,
+    white,
+    rgb(238, 241, 238),
+    rgb(166, 195, 166)
+  ) !important;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 </style>

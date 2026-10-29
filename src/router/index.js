@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import CaseStudies from '../components/tabs/CaseStudies.vue';
 import Home from '../components/tabs/Home.vue';
 import Faq from '../components/tabs/Faq.vue';
@@ -14,6 +14,7 @@ import Funding from '../components/tabs/Funding.vue';
 import Videos from '../components/tabs/Videos.vue';
 import ReportsPublications from '../components/tabs/ReportsPublications.vue';
 import Data from '../components/tabs/Data.vue';
+import TheMap from '../components/TheMap.vue';
 
 const routes = [
   {
@@ -89,12 +90,12 @@ const routes = [
   {
     path: '/map',
     name: 'map',
-    component: () => import('../components/TheMap.vue'),
+    component: TheMap,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes,
 });
 

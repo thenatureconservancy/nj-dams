@@ -362,12 +362,19 @@
           Rivers are very dynamic and resilient systems. Experience has shown
           that natural river systems can be restored relatively rapidly after
           dam removal. For example, spawning fish returned to the
-          <a class="factsheet-link" @click="openFactsheet('hughesville-dam-factsheet.png')"
+          <a
+            class="factsheet-link"
+            @click="openFactsheet('hughesville-dam-factsheet.png')"
             >Musconetcong</a
           >,
-          <a class="factsheet-link" @click="openFactsheet('weston-mill-dam-factsheet.png')">Millstone</a
+          <a
+            class="factsheet-link"
+            @click="openFactsheet('weston-mill-dam-factsheet.png')"
+            >Millstone</a
           >, and
-          <a class="factsheet-link" @click="openFactsheet('columbia-lake-dam-factsheet.png')"
+          <a
+            class="factsheet-link"
+            @click="openFactsheet('columbia-lake-dam-factsheet.png')"
             >Paulins Kill</a
           >
           Rivers only months after dam removal projects there. (AR)
@@ -433,7 +440,16 @@ const navigateToMonitoring = () => {
 <style scoped>
 #header-title {
   border-left: 4px solid black;
-  padding-left: 1rem;
+  padding: 1rem;
+  background-color: white;
+  background-image: linear-gradient(
+    45deg,
+    white,
+    rgb(238, 241, 238),
+    rgb(166, 195, 166)
+  ) !important;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 #funding,
