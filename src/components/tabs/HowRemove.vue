@@ -69,6 +69,8 @@
     </div>
     <div class="q-mb-md q-mt-lg text-center">
       <q-btn
+        unelevated
+        size="large"
         label="Learn More About Funding"
         color="primary"
         @click="navigateToFunding()"
@@ -401,6 +403,8 @@
       <br /><br />
       <div class="text-center">
         <q-btn
+          unelevated
+          size="large"
           color="primary"
           class="q-mt-md"
           label="Learn More About Monitoring"

@@ -28,6 +28,8 @@
       <br /><br />
       <div class="text-center">
         <q-btn
+          unelevated
+          size="large"
           label="Funding Sources for Dam Removals"
           href="/dam-funding.pdf"
           target="_blank"

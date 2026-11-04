@@ -54,6 +54,8 @@
         </div>
         <div class="text-center">
           <q-btn
+            unelevated
+            size="large"
             color="primary"
             class="q-mt-md"
             label="Learn More About Dam Removal"
@@ -78,6 +80,8 @@
         </div>
         <div class="text-center">
           <q-btn
+            unelevated
+            size="large"
             color="primary"
             class="q-mt-md"
             label="Explore the Interactive Map"
@@ -108,6 +112,8 @@
 
               <div class="text-center">
                 <q-btn
+                  unelevated
+                  size="large"
                   color="primary"
                   class="q-mt-md"
                   label="View Full Series"
@@ -131,6 +137,7 @@
           color="primary"
           class="q-mt-md"
           label="Contact NJ SDRP"
+          icon="send"
           @click="ms.openContact = !ms.openContact"
         ></q-btn>
       </div>
@@ -138,27 +145,27 @@
   </div>
 </template>
 <script setup>
-import { useRouter } from 'vue-router';
-import { useMapStore } from '../../store/index';
+import { useRouter } from "vue-router";
+import { useMapStore } from "../../store/index";
 
 const ms = useMapStore();
 
 const router = useRouter();
 
 const navigateToWhyRemove = () => {
-  router.push({ name: 'why-remove' });
+  router.push({ name: "why-remove" });
 };
 
 const navigateToCaseStudies = () => {
-  router.push({ name: 'case-studies' });
+  router.push({ name: "case-studies" });
 };
 
 const navigateToMapDashboard = () => {
-  router.push({ name: 'map' });
+  router.push({ name: "map" });
 };
 
 const navigateToContact = () => {
-  router.push({ name: 'contact' });
+  router.push({ name: "contact" });
 };
 </script>
 <style scoped>
