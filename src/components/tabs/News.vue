@@ -89,6 +89,6 @@
   border-bottom-right-radius: 8px;
 }
 .q-item {
-  color: #49a942;
+  color: #166534;
 }
 </style>

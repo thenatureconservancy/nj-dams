@@ -295,6 +295,6 @@
 }
 
 .q-item {
-  color: #49a942;
+  color: #166534;
 }
 </style>
