@@ -68,7 +68,11 @@
       a project eligible for certain funding sources and ineligible for others.
     </div>
     <div class="q-mb-md q-mt-lg text-center">
-      <q-btn label="Learn More About Funding" color="primary"></q-btn>
+      <q-btn
+        label="Learn More About Funding"
+        color="primary"
+        @click="navigateToFunding()"
+      ></q-btn>
     </div>
   </div>
   <q-separator inset />
@@ -420,8 +424,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const showFactsheet = ref(false);
@@ -433,7 +437,11 @@ const openFactsheet = (filename) => {
 };
 
 const navigateToMonitoring = () => {
-  router.push({ name: 'monitoring' });
+  router.push({ name: "monitoring" });
+};
+
+const navigateToFunding = () => {
+  router.push({ name: "funding" });
 };
 </script>
 
@@ -461,7 +469,7 @@ const navigateToMonitoring = () => {
 }
 
 #planning-img {
-  background-image: url('/img_4172-2.webp');
+  background-image: url("/img_4172-2.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

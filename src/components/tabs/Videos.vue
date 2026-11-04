@@ -1,6 +1,31 @@
 <template>
+  <br />
+  <div id="content">
+    <q-list>
+      <q-item clickable v-ripple href="#voices">
+        <q-item-section>
+          <q-item-label>Voices of Dam Removal</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#dams">
+        <q-item-section>
+          <q-item-label>Dams 101</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#removal">
+        <q-item-section>
+          <q-item-label>Dam Removal in Action</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple href="#webinars">
+        <q-item-section>
+          <q-item-label>Webinars</q-item-label>
+        </q-item-section>
+      </q-item>
+    </q-list>
+  </div>
   <h2 id="header-title">Videos</h2>
-  <div>
+  <div id="voices">
     <div class="text-bold q-my-md">Voices of Dam Removal</div>
     <div class="q-my-md">
       In this short video series, Voices of Dam Removal, we explore the vital
@@ -85,7 +110,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div id="dams">
     <div class="text-bold q-my-md">Dams 101</div>
     <div>
       <div class="row">
@@ -137,7 +162,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div id="removal">
     <div class="text-bold q-my-md">Dam Removal in Action</div>
     <div>
       <div class="row">
@@ -178,7 +203,7 @@
       </div> -->
     </div>
   </div>
-  <div>
+  <div id="webinars">
     <div class="text-bold q-my-md">Webinars</div>
     <div>
       <div class="row">
@@ -347,5 +372,19 @@
   ) !important;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+#voices,
+#dams,
+#removal,
+#webinars {
+  scroll-margin-top: 80px;
+}
+
+#content {
+  position: fixed;
+  display: block;
+  left: 20px;
+  top: 80px;
 }
 </style>
