@@ -25,7 +25,7 @@
       </arcgis-map>
 
       <div
-        class="bg-white shadow-2"
+        class="bg-white shadow-2 help-btn"
         style="
           position: absolute;
           display: block;
@@ -260,7 +260,7 @@
   </div>
 </template>
 <script setup>
-import { useMapStore } from '../store/index';
+import { useMapStore } from "../store/index";
 const ms = useMapStore();
 function initGauge() {
   const gaugeChart = echarts.init(this.$refs.gauge);
@@ -270,10 +270,10 @@ function initGauge() {
       formatter: function (params) {
         let message;
 
-        if (params.data.name == 'Overall') {
-          message = 'Total Dams: <br/>' + params.data.value;
-        } else if (params.data.name == 'Policy') {
-          message = 'Dams Removed: <br/>' + params.data.value;
+        if (params.data.name == "Overall") {
+          message = "Total Dams: <br/>" + params.data.value;
+        } else if (params.data.name == "Policy") {
+          message = "Dams Removed: <br/>" + params.data.value;
         }
 
         return message;
@@ -282,7 +282,7 @@ function initGauge() {
     },
     series: [
       {
-        type: 'gauge',
+        type: "gauge",
         startAngle: 90,
         endAngle: -270,
         max: 10,
@@ -299,8 +299,8 @@ function initGauge() {
           lineStyle: {
             width: 40,
             color: [
-              [0.425, '#e7e7e7'],
-              [0.575, '#e7e7e7'],
+              [0.425, "#e7e7e7"],
+              [0.575, "#e7e7e7"],
             ],
           },
         },
@@ -319,26 +319,26 @@ function initGauge() {
         data: [
           {
             value: 100,
-            name: 'Total',
+            name: "Total",
             title: {
-              offsetCenter: ['0%', '-50%'],
+              offsetCenter: ["0%", "-50%"],
             },
             detail: {
               valueAnimation: true,
-              offsetCenter: ['0%', '-30%'],
-              formatter: '{value}',
+              offsetCenter: ["0%", "-30%"],
+              formatter: "{value}",
             },
           },
           {
             value: 25,
-            name: 'Removed',
+            name: "Removed",
             title: {
-              offsetCenter: ['0%', '-5%'],
+              offsetCenter: ["0%", "-5%"],
             },
             detail: {
               valueAnimation: true,
-              offsetCenter: ['0%', '10%'],
-              formatter: '{value}',
+              offsetCenter: ["0%", "10%"],
+              formatter: "{value}",
             },
           },
         ],
@@ -349,7 +349,7 @@ function initGauge() {
           width: 50,
           height: 14,
           fontSize: 14,
-          color: 'inherit',
+          color: "inherit",
         },
       },
     ],
@@ -424,6 +424,53 @@ function initGauge() {
   gap: 12px;
   height: 100%;
   position: relative;
+}
+
+/* Mobile: map on top (1/2 of screen), panels stacked below */
+@media (max-width: 700px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .dashboard__map {
+    position: relative;
+    flex: none;
+    height: calc(50% - 6px);
+    min-height: 200px;
+  }
+
+  .help-btn {
+    left: 12px !important;
+    top: 12px !important;
+  }
+
+  .dashboard__panels {
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    height: auto;
+  }
+
+  .panel {
+    flex: none;
+  }
+
+  .stat-value {
+    min-height: 100px;
+  }
+
+  .charts-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .panel-upper,
+  .panel-lower {
+    min-height: 120px;
+  }
 }
 
 .panel-overlay {

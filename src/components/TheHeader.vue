@@ -130,7 +130,7 @@
             <q-item-section>Explore Dams</q-item-section>
           </q-item>
           <q-item clickable v-close-popup :to="{ name: 'dashboard' }">
-            <q-item-section>Monitor Dams</q-item-section>
+            <q-item-section>SDRP Projects</q-item-section>
           </q-item>
           <q-separator />
           <q-item-label header>Resources</q-item-label>
@@ -164,27 +164,27 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router';
-import { useMapStore } from '../store/index';
+import { ref, watch, onMounted, onUnmounted } from "vue";
+import { useRoute } from "vue-router";
+import { useMapStore } from "../store/index";
 
 const ms = useMapStore();
 const route = useRoute();
-const activeTab = ref('home');
+const activeTab = ref("home");
 const showScrollBtn = ref(false);
 
 // Update active tab based on current route
 watch(
   () => route.name,
   (newRouteName) => {
-    activeTab.value = newRouteName || 'home';
+    activeTab.value = newRouteName || "home";
   },
   { immediate: true },
 );
 
 // Scroll to top of page with smooth animation
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 // Handle scroll visibility
@@ -193,11 +193,11 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 

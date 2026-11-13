@@ -44,37 +44,37 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useQuasar } from 'quasar';
-import { useRoute } from 'vue-router';
-import { useMapStore } from './store/index';
-import '@arcgis/map-components/components/arcgis-map';
-import '@arcgis/map-components/components/arcgis-legend';
-import '@arcgis/map-components/components/arcgis-scale-bar';
-import '@arcgis/map-components/components/arcgis-zoom';
-import '@arcgis/map-components/components/arcgis-expand';
-import '@arcgis/map-components/components/arcgis-basemap-toggle';
-import '@arcgis/map-components/components/arcgis-basemap-gallery';
-import '@arcgis/map-components/components/arcgis-home';
-import '@arcgis/map-components/components/arcgis-layer-list';
-import TheHeader from './components/TheHeader.vue';
-import TheMap from './components/TheMap.vue';
-import TheLeftPanel from './components/TheLeftPanel.vue';
-import Panel from './components/UI/Panel.vue';
+import { computed } from "vue";
+import { useQuasar } from "quasar";
+import { useRoute } from "vue-router";
+import { useMapStore } from "./store/index";
+import "@arcgis/map-components/components/arcgis-map";
+import "@arcgis/map-components/components/arcgis-legend";
+import "@arcgis/map-components/components/arcgis-scale-bar";
+import "@arcgis/map-components/components/arcgis-zoom";
+import "@arcgis/map-components/components/arcgis-expand";
+import "@arcgis/map-components/components/arcgis-basemap-toggle";
+import "@arcgis/map-components/components/arcgis-basemap-gallery";
+import "@arcgis/map-components/components/arcgis-home";
+import "@arcgis/map-components/components/arcgis-layer-list";
+import TheHeader from "./components/TheHeader.vue";
+import TheMap from "./components/TheMap.vue";
+import TheLeftPanel from "./components/TheLeftPanel.vue";
+import Panel from "./components/UI/Panel.vue";
 
 const ms = useMapStore();
 const $q = useQuasar();
 const route = useRoute();
 let smallScreen = computed(() => $q.screen.lt.sm);
 const shouldApplyMargin = computed(
-  () => !['map', 'dashboard'].includes(route.name),
+  () => !["map", "dashboard"].includes(route.name),
 );
-const isHomeRoute = computed(() => route.name === 'home');
+const isHomeRoute = computed(() => route.name === "home");
 const contentMargin = computed(() => {
-  if (!shouldApplyMargin.value || isHomeRoute.value) return '';
-  if ($q.screen.gt.md) return 'margin-left: 300px; margin-right: 300px;';
-  if ($q.screen.gt.sm) return 'margin-left: 100px; margin-right: 100px;';
-  return 'margin-left: 24px; margin-right: 24px;';
+  if (!shouldApplyMargin.value || isHomeRoute.value) return "";
+  if ($q.screen.gt.md) return "margin-left: 300px; margin-right: 300px;";
+  if ($q.screen.gt.sm) return "margin-left: 100px; margin-right: 100px;";
+  return "margin-left: 24px; margin-right: 24px;";
 });
 </script>
 
@@ -110,6 +110,9 @@ const contentMargin = computed(() => {
     .esri-expand__container--expanded
     .esri-expand__panel {
     padding: 2px;
+  }
+  .app-content {
+    margin: 0px;
   }
 }
 

@@ -388,6 +388,23 @@
   top: 80px;
 }
 
+/* Mobile: stack videos one above the other */
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .row > .col {
+    flex: none;
+    width: auto;
+    max-width: 100%;
+  }
+  /* hide empty placeholder columns used to balance desktop rows */
+  .row > .col:empty {
+    display: none;
+  }
+}
+
 @media (max-width: 1439px) {
   #content {
     position: static;

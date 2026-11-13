@@ -91,8 +91,8 @@
           >Voices of Dam Removal
         </h5>
         <div>
-          <div class="row justify-between">
-            <div class="col-6">
+          <div class="row justify-between voices-row">
+            <div class="col-6 voices-text">
               In this short video series, we explore how local governments can
               play a pivotal role in restoring rivers through dam removal. This
               episode highlights the full story of the SDRP and collaborative
@@ -116,7 +116,7 @@
                 ></q-btn>
               </div>
             </div>
-            <div class="col-5">
+            <div class="col-5 voices-video">
               <q-video
                 :ratio="16 / 11.5"
                 src="https://www.youtube.com/embed/8XqTcq08qsQ?si=DOIlK7YtOd1IVu1X"
@@ -166,6 +166,27 @@ const navigateToContact = () => {
 <style scoped>
 .col-6 {
   min-height: 190px;
+}
+
+/* Mobile: stack video between the title and the text */
+@media (max-width: 700px) {
+  .voices-row {
+    flex-direction: column;
+  }
+  .voices-video {
+    order: 1;
+    width: 100%;
+    flex: none;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+  .voices-text {
+    order: 2;
+    width: 100%;
+    flex: none;
+    max-width: 100%;
+    min-height: 0;
+  }
 }
 
 :deep(.q-img) {

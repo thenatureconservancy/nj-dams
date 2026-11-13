@@ -169,7 +169,7 @@
 
     <!-- Dashboard Button -->
     <div
-      class="esri-widget--button shadow-1"
+      class="esri-widget--button shadow-1 dashboard-btn"
       style="
         position: absolute;
         display: block;
@@ -206,7 +206,7 @@
 
     <!-- Legend -->
     <div
-      class="esri-widget--button shadow-1"
+      class="esri-widget--button shadow-1 legend-btn"
       style="
         position: absolute;
         display: block;
@@ -228,6 +228,7 @@
     </div>
     <div
       v-if="ms.displayLegend"
+      class="legend-panel"
       style="position: absolute; display: block; bottom: 45px; left: 480px"
     >
       <Legend />
@@ -236,7 +237,7 @@
     <!-- Waterbodies Alert -->
     <div
       v-if="ms.waterbodiesAlert"
-      class="bg-orange text-white"
+      class="bg-orange text-white waterbodies-alert"
       style="
         position: absolute;
         top: 80px;
@@ -262,14 +263,14 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
-import Portal from '@arcgis/core/portal/Portal';
-import PortalBasemapsSource from '@arcgis/core/widgets/BasemapGallery/support/PortalBasemapsSource';
-import CSVLayer from '@arcgis/core/layers/CSVLayer.js';
-import { watch as reactiveWatch } from '@arcgis/core/core/reactiveUtils.js';
-import { useMapStore } from '../store/index';
-import { useRouter } from 'vue-router';
-import Legend from '../components/TheLegend.vue';
+import { watch } from "vue";
+import Portal from "@arcgis/core/portal/Portal";
+import PortalBasemapsSource from "@arcgis/core/widgets/BasemapGallery/support/PortalBasemapsSource";
+import CSVLayer from "@arcgis/core/layers/CSVLayer.js";
+import { watch as reactiveWatch } from "@arcgis/core/core/reactiveUtils.js";
+import { useMapStore } from "../store/index";
+import { useRouter } from "vue-router";
+import Legend from "../components/TheLegend.vue";
 
 const router = useRouter();
 const ms = useMapStore();
@@ -282,18 +283,18 @@ const applyFilters = async () => {
   const conditions = [];
 
   // Helper function to create OR conditions for multiple selections
-  const createOrCondition = (fieldName, values, extractField = 'label') => {
+  const createOrCondition = (fieldName, values, extractField = "label") => {
     if (!Array.isArray(values) || values.length === 0) return null;
     const conditions = values.map(
       (item) => `${fieldName} = '${item[extractField]}'`,
     );
     return conditions.length === 1
       ? conditions[0]
-      : `(${conditions.join(' OR ')})`;
+      : `(${conditions.join(" OR ")})`;
   };
 
   if (Array.isArray(ms.selectedCounty) && ms.selectedCounty.length) {
-    const countyCond = createOrCondition('County', ms.selectedCounty, 'label');
+    const countyCond = createOrCondition("County", ms.selectedCounty, "label");
     if (countyCond) conditions.push(countyCond);
   }
   if (
@@ -301,17 +302,17 @@ const applyFilters = async () => {
     ms.selectedCongressionalDistrict.length
   ) {
     const districtCond = createOrCondition(
-      'CongressionalDistrict',
+      "CongressionalDistrict",
       ms.selectedCongressionalDistrict,
-      'label',
+      "label",
     );
     if (districtCond) conditions.push(districtCond);
   }
   if (Array.isArray(ms.selectedOwner) && ms.selectedOwner.length) {
     const ownerCond = createOrCondition(
-      'BarrierOwnerType',
+      "BarrierOwnerType",
       ms.selectedOwner,
-      'value',
+      "value",
     );
     if (ownerCond) conditions.push(ownerCond);
   }
@@ -320,17 +321,17 @@ const applyFilters = async () => {
     ms.selectedHazardClassification.length
   ) {
     const hazardCond = createOrCondition(
-      'Hazard',
+      "Hazard",
       ms.selectedHazardClassification,
-      'value',
+      "value",
     );
     if (hazardCond) conditions.push(hazardCond);
   }
   if (Array.isArray(ms.selectedCondition) && ms.selectedCondition.length) {
     const conditionCond = createOrCondition(
-      'Condition',
+      "Condition",
       ms.selectedCondition,
-      'value',
+      "value",
     );
     if (conditionCond) conditions.push(conditionCond);
   }
@@ -340,7 +341,7 @@ const applyFilters = async () => {
   if (ms.envJusticeTribe) {
     conditions.push("EJTribal = 'yes'");
   }
-  const where = conditions.length ? conditions.join(' AND ') : '1=1';
+  const where = conditions.length ? conditions.join(" AND ") : "1=1";
   damsLayer.definitionExpression = conditions.length ? where : null;
 
   // Query the layer to count visible features
@@ -350,7 +351,7 @@ const applyFilters = async () => {
     const result = await damsLayer.queryFeatureCount(query);
     ms.numberOfDams = result;
   } catch (error) {
-    console.error('Error querying feature count:', error);
+    console.error("Error querying feature count:", error);
   }
 };
 
@@ -364,105 +365,105 @@ watch(() => ms.envJusticeTribe, applyFilters);
 
 // basemap gallery
 const allowedBasemapTitles = [
-  'Imagery Hybrid',
+  "Imagery Hybrid",
   // 'TNC Light with Hillshade',
   // 'TNC Dark Gray Map',
-  'Ocean Basemap',
+  "Ocean Basemap",
 ];
 const portal = new Portal();
 const source = new PortalBasemapsSource({
   portal,
   query: {
-    id: 'defa1b2287604d069c70af515331e30f',
+    id: "defa1b2287604d069c70af515331e30f",
   },
   filterFunction: (basemap) =>
     allowedBasemapTitles.indexOf(basemap.portalItem.title) > -1,
 });
 
 const countyOptions = [
-  { label: 'Atlantic', value: 'atlantic' },
-  { label: 'Bergen', value: 'bergen' },
-  { label: 'Burlington', value: 'burlington' },
-  { label: 'Camden', value: 'camden' },
-  { label: 'Cape May', value: 'cape_may' },
-  { label: 'Cumberland', value: 'cumberland' },
-  { label: 'Essex', value: 'essex' },
-  { label: 'Gloucester', value: 'gloucester' },
-  { label: 'Hudson', value: 'hudson' },
-  { label: 'Hunterdon', value: 'hunterdon' },
-  { label: 'Mercer', value: 'mercer' },
-  { label: 'Middlesex', value: 'middlesex' },
-  { label: 'Monmouth', value: 'monmouth' },
-  { label: 'Morris', value: 'morris' },
-  { label: 'Ocean', value: 'ocean' },
-  { label: 'Passaic', value: 'passaic' },
-  { label: 'Salem', value: 'salem' },
-  { label: 'Somerset', value: 'somerset' },
-  { label: 'Sussex', value: 'sussex' },
-  { label: 'Union', value: 'union' },
-  { label: 'Warren', value: 'warren' },
+  { label: "Atlantic", value: "atlantic" },
+  { label: "Bergen", value: "bergen" },
+  { label: "Burlington", value: "burlington" },
+  { label: "Camden", value: "camden" },
+  { label: "Cape May", value: "cape_may" },
+  { label: "Cumberland", value: "cumberland" },
+  { label: "Essex", value: "essex" },
+  { label: "Gloucester", value: "gloucester" },
+  { label: "Hudson", value: "hudson" },
+  { label: "Hunterdon", value: "hunterdon" },
+  { label: "Mercer", value: "mercer" },
+  { label: "Middlesex", value: "middlesex" },
+  { label: "Monmouth", value: "monmouth" },
+  { label: "Morris", value: "morris" },
+  { label: "Ocean", value: "ocean" },
+  { label: "Passaic", value: "passaic" },
+  { label: "Salem", value: "salem" },
+  { label: "Somerset", value: "somerset" },
+  { label: "Sussex", value: "sussex" },
+  { label: "Union", value: "union" },
+  { label: "Warren", value: "warren" },
 ];
 
 const ownerOptions = [
-  { label: 'Federal', value: 'Federal' },
+  { label: "Federal", value: "Federal" },
   {
-    label: 'Local Government',
-    value: 'Local government',
+    label: "Local Government",
+    value: "Local government",
   },
-  { label: 'Private', value: 'Private' },
+  { label: "Private", value: "Private" },
   {
-    label: 'Public Utility',
-    value: 'Public utility',
+    label: "Public Utility",
+    value: "Public utility",
   },
-  { label: 'State', value: 'State' },
-  { label: 'Unknown', value: 'Unknown' },
+  { label: "State", value: "State" },
+  { label: "Unknown", value: "Unknown" },
 ];
 
 const hazardOptions = [
-  { label: 'High', value: 'High' },
-  { label: 'Low', value: 'Low' },
-  { label: 'Significant', value: 'Significant' },
-  { label: 'Unknown', value: 'Unknown' },
+  { label: "High", value: "High" },
+  { label: "Low", value: "Low" },
+  { label: "Significant", value: "Significant" },
+  { label: "Unknown", value: "Unknown" },
 ];
 
 const conditionOptions = [
-  { label: 'Dam breached', value: 'Dam breached' },
-  { label: 'Fair', value: 'Fair' },
-  { label: 'Poor', value: 'Poor' },
-  { label: 'Satisfactory', value: 'Satisfactory' },
-  { label: 'Unknown', value: 'Unknown' },
-  { label: 'Unsatisfactory', value: 'Unsatisfactory' },
+  { label: "Dam breached", value: "Dam breached" },
+  { label: "Fair", value: "Fair" },
+  { label: "Poor", value: "Poor" },
+  { label: "Satisfactory", value: "Satisfactory" },
+  { label: "Unknown", value: "Unknown" },
+  { label: "Unsatisfactory", value: "Unsatisfactory" },
 ];
 
 const congressionalOptions = [
-  { label: 'NJ01', value: 'nj01' },
-  { label: 'NJ02', value: 'nj02' },
-  { label: 'NJ03', value: 'nj03' },
-  { label: 'NJ04', value: 'nj04' },
-  { label: 'NJ05', value: 'nj05' },
-  { label: 'NJ06', value: 'nj06' },
-  { label: 'NJ07', value: 'nj07' },
-  { label: 'NJ08', value: 'nj08' },
-  { label: 'NJ09', value: 'nj09' },
-  { label: 'NJ10', value: 'nj10' },
-  { label: 'NJ11', value: 'nj11' },
-  { label: 'NJ12', value: 'nj12' },
+  { label: "NJ01", value: "nj01" },
+  { label: "NJ02", value: "nj02" },
+  { label: "NJ03", value: "nj03" },
+  { label: "NJ04", value: "nj04" },
+  { label: "NJ05", value: "nj05" },
+  { label: "NJ06", value: "nj06" },
+  { label: "NJ07", value: "nj07" },
+  { label: "NJ08", value: "nj08" },
+  { label: "NJ09", value: "nj09" },
+  { label: "NJ10", value: "nj10" },
+  { label: "NJ11", value: "nj11" },
+  { label: "NJ12", value: "nj12" },
 ];
 
 // arcgisViewReadyChange
 const onReady = (event) => {
-  const webMap = document.querySelector('arcgis-map').view.map;
-  const mapView = document.querySelector('arcgis-map').view;
+  const webMap = document.querySelector("arcgis-map").view.map;
+  const mapView = document.querySelector("arcgis-map").view;
 
   mapView.popup.dockEnabled = true;
   mapView.popup.docked = true;
   mapView.popup.includeDefaultActions = false;
 
   mapView.popup.dockOptions = {
-    position: 'top-right',
+    position: "top-right",
     breakpoint: false,
     buttonEnabled: false,
-    buttonAlignment: 'top-right',
+    buttonAlignment: "top-right",
   };
 
   mapView.popup.visibleElements = {
@@ -471,74 +472,74 @@ const onReady = (event) => {
   };
 
   const dams_csv = new CSVLayer({
-    url: '/dams.csv',
-    copyright: 'National Aquatic Connectivity Collaborative',
+    url: "/dams.csv",
+    copyright: "National Aquatic Connectivity Collaborative",
 
     renderer: {
-      type: 'class-breaks',
-      field: 'State_PNCWC_tier',
+      type: "class-breaks",
+      field: "State_PNCWC_tier",
 
       classBreakInfos: [
         {
           minValue: 1,
           maxValue: 4,
-          label: 'Highest',
+          label: "Highest",
           symbol: {
-            type: 'simple-marker',
-            color: '#c46a54',
+            type: "simple-marker",
+            color: "#c46a54",
             size: 12,
-            outline: { color: 'black', width: 0.75 },
+            outline: { color: "black", width: 0.75 },
           },
         },
         {
           minValue: 5,
           maxValue: 8,
-          label: 'Very High',
+          label: "Very High",
           symbol: {
-            type: 'simple-marker',
-            color: '#f0c419',
+            type: "simple-marker",
+            color: "#f0c419",
             size: 10,
-            outline: { color: 'black', width: 0.75 },
+            outline: { color: "black", width: 0.75 },
           },
         },
         {
           minValue: 9,
           maxValue: 12,
-          label: 'High',
+          label: "High",
           symbol: {
-            type: 'simple-marker',
-            color: '#9be53f',
+            type: "simple-marker",
+            color: "#9be53f",
             size: 8,
-            outline: { color: 'black', width: 0.75 },
+            outline: { color: "black", width: 0.75 },
           },
         },
         {
           minValue: 13,
           maxValue: 16,
-          label: 'Medium',
+          label: "Medium",
           symbol: {
-            type: 'simple-marker',
-            color: '#73c9a5',
+            type: "simple-marker",
+            color: "#73c9a5",
             size: 6,
-            outline: { color: 'black', width: 0.75 },
+            outline: { color: "black", width: 0.75 },
           },
         },
         {
           minValue: 17,
           maxValue: 20,
-          label: 'Low',
+          label: "Low",
           symbol: {
-            type: 'simple-marker',
-            color: '#142a78',
+            type: "simple-marker",
+            color: "#142a78",
             size: 5,
-            outline: { color: 'black', width: 0.75 },
+            outline: { color: "black", width: 0.75 },
           },
         },
       ],
     },
 
     popupTemplate: {
-      title: '{Name}',
+      title: "{Name}",
       actions: [],
       content: `
       <b>Report:</b> <a href="{URL}" target="_blank">{URL}</a><br/>
@@ -558,7 +559,7 @@ const onReady = (event) => {
   damsLayer = dams_csv;
   mapView.map.add(dams_csv);
 
-  mapView.on('click', async (event) => {
+  mapView.on("click", async (event) => {
     const response = await mapView.hitTest(event);
     const results = response.results.filter(
       (r) => r.graphic.layer === damsLayer,
@@ -574,7 +575,7 @@ const onReady = (event) => {
 
   webMap.allLayers.forEach((layer) => {
     console.log(layer.title);
-    layer.listMode = 'show';
+    layer.listMode = "show";
     // Disable popups for all layers except the Dams layer
     if (layer !== damsLayer) {
       layer.popupTemplate = null;
@@ -583,7 +584,7 @@ const onReady = (event) => {
 
   // Watch for visibility changes of Overburdened Communities layer
   const overburdenedLayer = webMap.allLayers.find(
-    (layer) => layer.title === 'Overburdened Communities',
+    (layer) => layer.title === "Overburdened Communities",
   );
 
   if (overburdenedLayer) {
@@ -600,7 +601,7 @@ const onReady = (event) => {
 
   // Watch for visibility changes of Waterbodies layer
   const waterbodiesLayer = webMap.allLayers.find(
-    (layer) => layer.title === 'Waterbodies',
+    (layer) => layer.title === "Waterbodies",
   );
 
   if (waterbodiesLayer) {
@@ -657,10 +658,48 @@ const onReady = (event) => {
 @media screen and (max-width: 700px) {
   .map-view {
     flex-direction: column;
+    position: relative;
   }
+  /* Map on top, 1/3 of the available height */
+  #map {
+    order: 1;
+    flex: 0 0 calc((100% - 12px) / 3);
+    height: auto;
+    min-height: 0;
+  }
+  /* Side panel below, fills the remaining space */
   #side-panel {
+    order: 2;
     width: 100%;
-    min-height: 20vh;
+    max-width: 100%;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+  /* Custom map buttons: pin to the top-left of the map */
+  .dashboard-btn {
+    left: 24px !important;
+    top: 24px !important;
+  }
+  .legend-btn {
+    left: 24px !important;
+    top: 64px !important;
+    bottom: auto !important;
+  }
+  .legend-panel {
+    left: 64px !important;
+    top: 64px !important;
+    bottom: auto !important;
+    max-width: calc(100% - 80px);
+    max-height: calc(33% - 90px);
+    overflow: auto;
+  }
+  .waterbodies-alert {
+    top: 24px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 120px);
+    z-index: 50;
   }
   .esri-view-width-xsmall .esri-expand--auto .esri-expand__container--expanded {
     height: fit-content;
