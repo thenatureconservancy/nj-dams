@@ -370,7 +370,7 @@
 }
 
 #embankment {
-  background-image: url('/embankment-dam-diagram.png');
+  background-image: url("/embankment-dam-diagram.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -380,7 +380,7 @@
 }
 
 #concrete {
-  background-image: url('/concrete-dam.png');
+  background-image: url("/concrete-dam.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -390,7 +390,7 @@
 }
 
 #earthen {
-  background-image: url('/thumbnail_embankment-cross-section.jpg');
+  background-image: url("/thumbnail_embankment-cross-section.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -404,5 +404,12 @@
   display: block;
   left: 20px;
   top: 80px;
+}
+
+@media (max-width: 1439px) {
+  #content {
+    position: static;
+    margin-bottom: 1rem;
+  }
 }
 </style>

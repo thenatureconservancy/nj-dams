@@ -387,4 +387,11 @@
   left: 20px;
   top: 80px;
 }
+
+@media (max-width: 1439px) {
+  #content {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
 </style>

@@ -1,17 +1,12 @@
 <template>
   <div class="q-ma-md shadow-2" style="border-radius: 8px">
-    <q-img src="/header-bg.jpg" style="height: 40vh; border-radius: 8px">
-      <div class="absolute-full flex flex-center">
-        <h1
-          class="text-bold banner-title text-center"
-          style="margin: auto; width: 100%; padding: 0 16px"
-        >
-          <span style="font-weight: 300 !important"> WELCOME TO THE </span>
-          <br />
-          NEW JERSEY STATEWIDE DAM REMOVAL PARTNERSHIP
-        </h1>
-      </div>
-    </q-img>
+    <div class="hero-banner flex flex-center">
+      <h1 class="text-bold banner-title text-center">
+        <span style="font-weight: 300 !important"> WELCOME TO THE </span>
+        <br />
+        NEW JERSEY STATEWIDE DAM REMOVAL PARTNERSHIP
+      </h1>
+    </div>
   </div>
 
   <div class="row q-mt-xl justify-evenly">
@@ -85,7 +80,7 @@
             color="primary"
             class="q-mt-md"
             label="Explore the Interactive Map"
-            @click="navigateToWhyRemove"
+            @click="navigateToMap"
           ></q-btn>
         </div>
       </div>
@@ -117,7 +112,7 @@
                   color="primary"
                   class="q-mt-md"
                   label="View Full Series"
-                  @click="navigateToCaseStudies"
+                  @click="navigateToVoices"
                 ></q-btn>
               </div>
             </div>
@@ -156,11 +151,11 @@ const navigateToWhyRemove = () => {
   router.push({ name: "why-remove" });
 };
 
-const navigateToCaseStudies = () => {
-  router.push({ name: "case-studies" });
+const navigateToVoices = () => {
+  router.push({ name: "videos" });
 };
 
-const navigateToMapDashboard = () => {
+const navigateToMap = () => {
   router.push({ name: "map" });
 };
 
@@ -192,9 +187,24 @@ const navigateToContact = () => {
   padding-top: 30px;
 }
 
+.hero-banner {
+  min-height: 40vh;
+  padding: 24px 16px;
+  border-radius: 8px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
 .banner-title {
+  margin: 0;
+  width: 100%;
   font-size: clamp(1.5rem, 7vw, 3.5rem);
   line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 768px) {

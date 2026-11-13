@@ -489,6 +489,13 @@ const navigateToFunding = () => {
   top: 80px;
 }
 
+@media (max-width: 1439px) {
+  #content {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
+
 .factsheet-link {
   color: #1976d2;
   text-decoration: underline;
