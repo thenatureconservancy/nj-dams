@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { defineStore } from "pinia";
+import { ref } from "vue";
 
-export const useMapStore = defineStore('mapStore', () => {
+export const useMapStore = defineStore("mapStore", () => {
   // MODELS
   const splitterModel = ref(25);
   const mobileSplitterModel = ref(35);
@@ -15,7 +15,7 @@ export const useMapStore = defineStore('mapStore', () => {
   const selectedOwner = ref([]);
   const selectedHazardClassification = ref([]);
   const selectedCondition = ref([]);
-  const mapDashboardOption = ref('map');
+  const mapDashboardOption = ref("map");
   const openContact = ref(false);
   const openDamFactsheet = ref(false);
   const displayLegend = ref(true);
@@ -24,11 +24,15 @@ export const useMapStore = defineStore('mapStore', () => {
   const waterbodiesAlert = ref(false);
   const waterbodiesVis = ref(false);
   const numberOfDams = ref(2632);
+  const damNames = ref(null);
+  const dashboardDams = ref([]);
+  const selectedDashboardDam = ref(null);
+  const sdrpCheckbox = ref(false);
 
   // FUNCTIONS
   function getLayersInfo() {
     // get and assign layers
-    const webMap = document.querySelector('arcgis-map').view.map;
+    const webMap = document.querySelector("arcgis-map").view.map;
     console.log(webMap);
   }
 
@@ -55,5 +59,9 @@ export const useMapStore = defineStore('mapStore', () => {
     waterbodiesVis,
     getLayersInfo,
     numberOfDams,
+    damNames,
+    dashboardDams,
+    selectedDashboardDam,
+    sdrpCheckbox,
   };
 });

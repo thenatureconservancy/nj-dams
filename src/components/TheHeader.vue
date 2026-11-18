@@ -81,6 +81,9 @@
           <q-item clickable v-ripple @click="$router.push('/videos')">
             <q-item-section>Videos</q-item-section>
           </q-item>
+          <q-item clickable v-ripple @click="$router.push('/webinars')">
+            <q-item-section>Webinars</q-item-section>
+          </q-item>
           <q-item
             clickable
             v-ripple
@@ -125,6 +128,12 @@
           <q-item clickable v-close-popup @click="$router.push('/how-remove')">
             <q-item-section>How to Remove a Dam</q-item-section>
           </q-item>
+          <q-item clickable v-close-popup @click="$router.push('/monitoring')">
+            <q-item-section>Monitoring</q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup @click="$router.push('/funding')">
+            <q-item-section>Funding</q-item-section>
+          </q-item>
           <q-separator />
           <q-item clickable v-close-popup :to="{ name: 'map' }">
             <q-item-section>Explore Dams</q-item-section>
@@ -135,7 +144,7 @@
           <q-separator />
           <q-item-label header>Resources</q-item-label>
           <q-item clickable v-close-popup @click="$router.push('/resources')">
-            <q-item-section>Resources</q-item-section>
+            <q-item-section>References</q-item-section>
           </q-item>
           <q-item
             clickable
@@ -146,6 +155,22 @@
           </q-item>
           <q-item clickable v-close-popup @click="$router.push('/news')">
             <q-item-section>In the News</q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup @click="$router.push('/videos')">
+            <q-item-section>Videos</q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup @click="$router.push('/webinars')">
+            <q-item-section>Webinars</q-item-section>
+          </q-item>
+          <q-item
+            clickable
+            v-close-popup
+            @click="$router.push('/reports-publications')"
+          >
+            <q-item-section>Reports and Publications</q-item-section>
+          </q-item>
+          <q-item clickable v-close-popup @click="$router.push('/data')">
+            <q-item-section>Data</q-item-section>
           </q-item>
           <q-separator />
           <q-item clickable v-close-popup :to="{ name: 'faq' }">

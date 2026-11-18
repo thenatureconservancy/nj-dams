@@ -101,15 +101,6 @@
               >
             </span>
           </div>
-          <!-- <div class="q-mx-sm">
-            Under the New Jersey Environmental Justice Law, “Overburdened
-            Community” means any census block group, as determined in accordance
-            with the most recent United States Census, in which: (1) at least 35
-            percent of the households qualify as low-income households; (2) at
-            least 40 percent of the residents identify as a minority or as
-            members of a State recognized tribal community; or (3) at least 40
-            percent of the households have limited English proficiency.
-          </div> -->
           <q-checkbox
             label="Overburdened Communities Tract"
             v-model="ms.envJusticeTract"
@@ -117,6 +108,13 @@
           <q-checkbox
             label="Overburdened Communities - Tribal"
             v-model="ms.envJusticeTribe"
+          ></q-checkbox>
+          <br />
+          <br />
+          <div>NJ State Dam Removal Partnership</div>
+          <q-checkbox
+            label="Dam Removal Projects"
+            v-model="ms.sdrpCheckbox"
           ></q-checkbox>
         </div>
       </q-scroll-area>
@@ -704,6 +702,12 @@ const onReady = (event) => {
   .esri-view-width-xsmall .esri-expand--auto .esri-expand__container--expanded {
     height: fit-content;
   }
+}
+
+.esri-popup__header-title,
+.esri-popup__header-title h2,
+.esri-features__header h2 {
+  line-height: 2 !important;
 }
 
 .esri-basemap-gallery {

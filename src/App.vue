@@ -40,6 +40,7 @@
         </q-card>
       </q-dialog>
     </div>
+    <!-- <TheFooter /> -->
   </div>
 </template>
 
@@ -61,6 +62,7 @@ import TheHeader from "./components/TheHeader.vue";
 import TheMap from "./components/TheMap.vue";
 import TheLeftPanel from "./components/TheLeftPanel.vue";
 import Panel from "./components/UI/Panel.vue";
+import TheFooter from "./components/TheFooter.vue";
 
 const ms = useMapStore();
 const $q = useQuasar();

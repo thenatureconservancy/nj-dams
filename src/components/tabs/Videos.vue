@@ -1,5 +1,5 @@
 <template>
-  <br />
+  <h2 id="header-title">Videos</h2>
   <div id="content">
     <q-list>
       <q-item clickable v-ripple href="#voices">
@@ -17,14 +17,13 @@
           <q-item-label>Dam Removal in Action</q-item-label>
         </q-item-section>
       </q-item>
-      <q-item clickable v-ripple href="#webinars">
+      <!-- <q-item clickable v-ripple href="#webinars">
         <q-item-section>
           <q-item-label>Webinars</q-item-label>
         </q-item-section>
-      </q-item>
+      </q-item> -->
     </q-list>
   </div>
-  <h2 id="header-title">Videos</h2>
   <div id="voices">
     <div class="text-bold q-my-md">Voices of Dam Removal</div>
     <div class="q-my-md">
@@ -201,161 +200,6 @@
           />
         </div>
       </div> -->
-    </div>
-  </div>
-  <div id="webinars">
-    <div class="text-bold q-my-md">Webinars</div>
-    <div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/ffBeD0PuFjI"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/L6joFluw_xE"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/emKbdkeVoOQ"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/_SXMMKtfOOg"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/znPdOgUEay8"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/gYU08JrOTps"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/y0pkd5yI4mQ"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/2rhTn9e0YDU"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/r9c5F-tqeio"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/yDwnFn_ctxs"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/n-1aMoPhlnM"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/8sQBaGoHnSQ"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/L6nar23Q4AA"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/Bi4snLkpyXs"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/-T3U-LG-BB4"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/9v6C0tPD5tc"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/91OGKU0vpLY"
-          />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video
-            :ratio="16 / 9"
-            src="https://www.youtube.com/embed/9NGlGlOq4ug"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="https://videopress.com/v/i3zb04Ae" />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="https://videopress.com/v/e31mg86O" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="" />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="" />
-        </div>
-        <div class="col q-mx-md q-mb-md">
-          <q-video :ratio="16 / 9" src="https://videopress.com/v/If0k5de3" />
-        </div>
-      </div>
     </div>
   </div>
 </template>

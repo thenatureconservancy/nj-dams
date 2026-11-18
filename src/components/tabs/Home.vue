@@ -126,10 +126,14 @@
           </div>
         </div>
       </div>
-      <div class="q-ma-xl text-center">
+      <div
+        class="text-center q-mt-lg q-mb-sm"
+        style="align-items: center; justify-content: center"
+      >
         <q-btn
           size="lg"
-          color="primary"
+          color="white"
+          text-color="black"
           class="q-mt-md"
           label="Contact NJ SDRP"
           icon="send"
@@ -213,8 +217,7 @@ const navigateToContact = () => {
   padding: 24px 16px;
   border-radius: 8px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url("/header-bg.jpg");
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("banner.JPG");
   background-size: cover;
   background-position: center;
   color: white;
