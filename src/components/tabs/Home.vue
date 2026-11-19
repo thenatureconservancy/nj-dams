@@ -217,7 +217,8 @@ const navigateToContact = () => {
   padding: 24px 16px;
   border-radius: 8px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("banner.JPG");
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("/public/banner.JPG");
   background-size: cover;
   background-position: center;
   color: white;
