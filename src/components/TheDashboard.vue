@@ -131,10 +131,32 @@
           <span class="material-icons-outlined text-primary"> water </span>100
         </div>
       </div>
-      <div class="charts-wrapper">
-        <div class="shadow-2 panel" id="chart-1">
+
+      <div
+        :class="
+          ms.selectedDashboardDam ? 'charts-wrapper' : 'dis-charts-wrapper'
+        "
+      >
+        <div
+          class="text-center text-primary text-bold text-h5"
+          style="border-radius: 4px; align-self: center"
+          v-if="!ms.selectedDashboardDam"
+        >
+          <div style="align-items: center">
+            <span class="material-icons-outlined"> error_outline </span>
+            <div>Select a dam to view project-specific details</div>
+          </div>
+        </div>
+        <div class="shadow-2 panel" id="chart-1" v-if="ms.selectedDashboardDam">
           <div class="panel-upper">
             <div class="text-center stat-label q-mb-sm">Dam Details</div>
+            <span
+              class="material-icons-outlined text-primary q-mb-sm"
+              style="font-size: xx-large"
+            >
+              info
+            </span>
+
             <div v-if="ms.selectedDashboardDam" style="line-height: 1.5">
               <div>
                 <span class="text-bold"> Name:</span>
@@ -159,7 +181,7 @@
             </div>
           </div>
         </div>
-        <div class="shadow-2 panel" id="chart-3">
+        <div class="shadow-2 panel" id="chart-3" v-if="ms.selectedDashboardDam">
           <div class="panel-lower">
             <div class="text-center stat-label">Removal Status</div>
             <div
@@ -255,14 +277,14 @@
             </div>
           </div>
         </div>
-        <div class="shadow-2 panel" id="chart-2">
+        <div class="shadow-2 panel" id="chart-2" v-if="ms.selectedDashboardDam">
           <div class="benefit-section">
             <div class="text-center stat-label q-my-sm">
               Ecological Benefits
             </div>
             <span
               class="material-icons-outlined text-center text-primary"
-              style="font-size: 1.6em"
+              style="font-size: xx-large"
             >
               forest
             </span>
@@ -346,7 +368,7 @@
             <div class="text-center stat-label q-my-sm">Co-benefits</div>
             <span
               class="material-icons-outlined text-center text-primary"
-              style="font-size: 1.6em"
+              style="font-size: xx-large"
             >
               groups
             </span>
@@ -413,8 +435,8 @@
           </div>
           <br />
           <div>
-            Select a dam project by clicking a location on the map or choosing
-            one from the Current Dams Being Removed list to access detailed
+            Select a dam project by clicking a point on the map or choosing one
+            from the Dam Removal Projects list to access detailed
             project-specific metrics and information.
           </div>
         </q-card-section>
@@ -830,6 +852,20 @@ const onReady = async () => {
   gap: 12px;
   height: 100%;
   position: relative;
+}
+
+.dis-charts-wrapper {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 12px;
+  height: 100%;
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
